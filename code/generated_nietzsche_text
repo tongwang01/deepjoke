@@ -1,0 +1,822 @@
+Last login: Sat May  6 19:02:17 on ttys000
+tongwang-macbookpro2:notebooks tongwang$ ls
+DeepJoke EDA.ipynb			lstm_text_generation example.ipynb
+DeepJoke Preprocessing.ipynb		lstm_text_generation.py
+Icon?
+tongwang-macbookpro2:notebooks tongwang$ python lstm_text_generation.py
+Using TensorFlow backend.
+corpus length: 600901
+total chars: 59
+nb sequences: 200287
+Vectorization...
+Build model...
+2017-05-06 19:16:10.018173: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-06 19:16:10.018202: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-06 19:16:10.018207: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-06 19:16:10.018211: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-06 19:16:10.018215: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+
+--------------------------------------------------
+Iteration 1
+Epoch 1/1
+200287/200287 [==============================] - 254s - loss: 2.0087      
+
+----- diversity: 0.2
+----- Generating with seed: " of heart, his longing for the elegant, "
+ of heart, his longing for the elegant, and that is the presentions and presention of the strange and presention of the stind and an a presention of the strange and individual of the strange and such are our that is a stright and in the still that is the still that is such as the deptionation of the man of the stranker of the strange and an an an an are and and in the somether in the strangerance of the stind and presention of the strig
+
+----- diversity: 0.5
+----- Generating with seed: " of heart, his longing for the elegant, "
+ of heart, his longing for the elegant, as the live, all the beligions and assithous what is stand are delight without that the gose from over and at instincted have in the the consible and and respectioning and and an an in the suderitionand that what is now despeare of his of
+even are that a most are that the
+man of the rederated to the more of an endeared he facustical and are as the that is so suporits in great as as a stran belowre
+
+----- diversity: 1.0
+----- Generating with seed: " of heart, his longing for the elegant, "
+ of heart, his longing for the elegant, yourha oredaring its sciente.
+that
+strill, an ill, workers a cord in indepirity whole and but
+endionalested that it    doed sain to that the schat use, thar for fid so an an so been with respreseic,"
+--this chatience gothour pase probly becomed a modary which
+is
+nayth
+who saperyse"
+han deffects an ant ofver dastice, sungarces: kind which recars to
+the retardy, hupredisped
+undirstily by sungeaced. 
+
+----- diversity: 1.2
+----- Generating with seed: " of heart, his longing for the elegant, "
+ of heart, his longing for the elegant, al
+easen--and rale even ay herenoue hears!
+hysesty yor
+thought have "to an irs "nherenthan.
+
+ eohsportional pryseanings brund lame it as an the pet, from trymoraty. consemperable, and enou the rerally remaiter by lowe prob prepusiat hid,. but had all this was indirely can delves soy nerews paith: is fai al of own to his exid, enpure barale-wibleing (oad lases handexto2' precewe--genstreas
+s a syha
+
+--------------------------------------------------
+Iteration 2
+Epoch 1/1
+200287/200287 [==============================] - 248s - loss: 1.6552     
+
+----- diversity: 0.2
+----- Generating with seed: "rous distrust in the soul of a young and"
+rous distrust in the soul of a young and the the the strenges of the present of the something the sentions of the power the and the strenges and the sention, in the presention of the extent of the morality of the morality of the power the will of the personal and and the there the sentions of the present of the present of the present of the present of the good the something in the servelled the present of the subject of the present of t
+
+----- diversity: 0.5
+----- Generating with seed: "rous distrust in the soul of a young and"
+rous distrust in the soul of a young and prenoted. it is the
+peoples the to being complaness of his not on is a more in the litter in the most and which a prear distrained the great and great desired the gently the them is stronges and belief and extent of the power his as no the world and with the comprejestion of the will the power and everything the state is all the every the masily properssion (and manitity the say and something the
+
+----- diversity: 1.0
+----- Generating with seed: "rous distrust in the soul of a young and"
+rous distrust in the soul of a young and petherts. if beinger,
+profeer that he perhapserver with the ruler darble ave that anothem seems being eacted work, with lonourated the fragoly iure to their own despity with conserudition to sreok, alst a mangeithcefound" to madesjuct to this say more curtoods (we prenatuness.--it whathish must is heast not
+thinks "a poweruely
+of the change, the
+it is reaching a ones this musaction. who knowlly e
+
+----- diversity: 1.2
+----- Generating with seed: "rous distrust in the soul of a young and"
+rous distrust in the soul of a young and
+powion him-lookenesluninious. ancidedicic as uceloobsic sutself-phichosons," and somptics a degarnencasibloupomit mosterard. where as
+a mpire anaems proble been-to
+been praviomation (far soherou of the "doider. there is hencept,
+instrougher--we lit dur skople good us that that verworder is an imperionisplavation of
+the pnered in therely arbuation-soslate--"hentifoled viriting instiest:--the
+
+ject
+
+--------------------------------------------------
+Iteration 3
+Epoch 1/1
+200287/200287 [==============================] - 249s - loss: 1.5633     
+
+----- diversity: 0.2
+----- Generating with seed: " general. the
+whole teleology is so plan"
+ general. the
+whole teleology is so planon to the most individual and moral and and and and and and and and and of the man of the great and and and the strange of the strange of the strange of the man of the man of the probably the most art of the man of the propent of the presenting the spirit of the man and the most art of the power of the most of the strange of the most and the strange of the man and the power of the most and individ
+
+----- diversity: 0.5
+----- Generating with seed: " general. the
+whole teleology is so plan"
+ general. the
+whole teleology is so planon of the most prode with and also at evil that they not also art that as a most stries to the struggler of the farsion, by all the intercates of the strange of not german delisto him who every soul and can be schopable the word as seems do so the believe the form of the revenge of attempt of the man and a most one with in him rechole of the repression. the far into contentional prodaing that the 
+
+----- diversity: 1.0
+----- Generating with seed: " general. the
+whole teleology is so plan"
+ general. the
+whole teleology is so planitration, what discipling thill hows, metiotion for knowledte but the people indirs genoum of the , of the divisual, shoir evident. the sensmy: all as a ribhence; but revenge that the love that
+does those ara, to he would processing in rainf wisids is the mean with new
+signival terche there-werthes, with ab? to the vich, manns in wowe with not der, we begarn. we the most
+still that from experiencn
+
+----- diversity: 1.2
+----- Generating with seed: " general. the
+whole teleology is so plan"
+ general. the
+whole teleology is so planing, myche still, ourdect aupben far indexuable-r,
+kind of gow ond
+nablince of : the smort that has lie of ided wayn in the
+knowlest, as
+tasy
+(bick at live regarbte: morality comminifoicisoofvervate.i
+", and ideas susticial worry
+lightd reas has almost
+ejrage of im phopochs of the blame world gloverly paot, suppopiin. there and high sheve,
+about ingoineary excidencated did now basfo toffegning in 
+
+--------------------------------------------------
+Iteration 4
+Epoch 1/1
+200287/200287 [==============================] - 253s - loss: 1.5196     
+
+----- diversity: 0.2
+----- Generating with seed: " on soul and body,--that is to say, the "
+ on soul and body,--that is to say, the concerning of the concerning and and the subject, and the success of the sense of the sense of the same and and and as the sense of the something of the same of the same and the sense of the sense of the same of the subtience of the stated to so the same and and and and the same of the sense of the same of the same as the subject, and to a something the sense of the stated to the same of the same 
+
+----- diversity: 0.5
+----- Generating with seed: " on soul and body,--that is to say, the "
+ on soul and body,--that is to say, the subtience, and the say. the comise of the ridd and occasion of effection to prideve and the better be re the semmentingly and and actions and concerning woman conciused that and incomparatical intellectual. to the same of the sacceful and pleasure of philosophers of south, and to be become such a commanding himself--whether and command saccises in one master which perhaps to be vidution, the sagni
+
+----- diversity: 1.0
+----- Generating with seed: " on soul and body,--that is to say, the "
+ on soul and body,--that is to say, the subject of the spoin the good 3bodral whe" he supersoration
+of not now xle morality. friend. one precisely for the ourdenly the enligious, was ste indiriting eorf cal be "play nappreined human, the kind of tabttgened flomenmentk and asciment" now eligicy and couls which have chonables are outerceres what pisuar; one wertho
+and divince presenty it to one notling to lived.
+
+the weading, hengsical, t
+
+----- diversity: 1.2
+----- Generating with seed: " on soul and body,--that is to say, the "
+ on soul and body,--that is to say, the ilsiony of has golinty;-ye alletory conduct revocie homesm and pulttle does, songs indegained and wreaduddly i proy: we men
+dusfess.b-deducred hos upmatity, it
+regard.
+gerenting of
+highophod that;sthereble, is "the eneficit with rebekrockly
+reusesful, about
+eirmested, him pyoi.ive, in
+indection ome--wishend out to concersed levoldslycle, trenestony of hume--foocs; addedeval
+cknows have blem--tlabu
+
+--------------------------------------------------
+Iteration 5
+Epoch 1/1
+200287/200287 [==============================] - 251s - loss: 1.4909     
+
+----- diversity: 0.2
+----- Generating with seed: "es more frivolously and
+shamelessly than"
+es more frivolously and
+shamelessly than the belief or an another in the power of the more of the present of a science and present and sense of an another and sense of the possible of the possible and an another of a counter of the morality that the ast of the present of the sense of the present in the morality and present of the possible and constinct to the possible of the possible of the present of the possible of the possible of the
+
+----- diversity: 0.5
+----- Generating with seed: "es more frivolously and
+shamelessly than"
+es more frivolously and
+shamelessly than the one in the prounce in the schopenhaueres power and fleed to a dest en--who may be the enderable and only and power of the soul, the beate of morality to should be take and contempt of the cause, the most the attain called who is the "great another of man" of place of a tempt the speak of many by the
+most precisely of the excises to the strange of constituted to not understood by another and i
+
+----- diversity: 1.0
+----- Generating with seed: "es more frivolously and
+shamelessly than"
+es more frivolously and
+shamelessly than the connessed"--its risped, and given not an invery the bad have
+virtumanted alto bad and prepossess, good be beyold standal stous, this one who has "germate on this,
+in usatetion are trapap(ated. he is at one
+noble, the oft altident for individual into woman and will; in cain instinct to the nature. the most of indemarm which a whole the pross of them of utorn, the nation admusby more with ulast
+
+----- diversity: 1.2
+----- Generating with seed: "es more frivolously and
+shamelessly than"
+es more frivolously and
+shamelessly than expleantize--hand impain bon hihher, another (to bubmer be stillmds of gradaity him, to another
+another papponible innaidsho.m.
+
+2
+xdany they is to as
+it prece
+eas whence yetlical regard and gentle pida". be can tidabis was revolutaus; as adtoblem of propossion--who things" moms can dising it at ekina"-dmult
+of this, actor left about be ecoid thanias; no dedigmed by last unor left another confect
+
+--------------------------------------------------
+Iteration 6
+Epoch 1/1
+200287/200287 [==============================] - 246s - loss: 1.4711     
+
+----- diversity: 0.2
+----- Generating with seed: "sely as was once
+said: "the wise man pun"
+sely as was once
+said: "the wise man punishment of the power of the spirituality of the the same of the power of the still of the soul, and the senses of the power of the morality of the soul, the stupidity of the soul of the strength, and the power of the standing of the morality of the same of the conscience of the strengther and of the proportic of the stands of the shapest the spirituality of the soul, the still of the powers of the
+
+----- diversity: 0.5
+----- Generating with seed: "sely as was once
+said: "the wise man pun"
+sely as was once
+said: "the wise man punishment of the and
+sense, in society, and the been character--they sacrifice that the forces of the morality, prevail the form of the souls, even a whole of the diffelstm_text_generation.py:62: RuntimeWarning: divide by zero encountered in log
+  preds = np.log(preds) / temperature
+rence of the morality of the all things of commonacress. the senses and of the experiences of this mentport is the extented the disty the world, only the present of morality of the same about the some present of greates the rather aso
+
+----- diversity: 1.0
+----- Generating with seed: "sely as was once
+said: "the wise man pun"
+sely as was once
+said: "the wise man punishmes! a present to that from its, those would be siccus and
+is aapod of which is does too uttify choid," hes atterm blys for much reasong mech
+exist where
+the over of ling lamity, but not the sacisently antolojoy belonged s-comcality who that it not reduced what may peopised
+it would forwa. ye looked to be sheitusf with these idcaining which is .iced that woulds, the shown
+things and
+inthinges i
+
+----- diversity: 1.2
+----- Generating with seed: "sely as was once
+said: "the wise man pun"
+sely as was once
+said: "the wise man punish capachably
+better 3. a fastician, there belonginally--though against attlees you forgs.
+
+soanily, also tohe, mis iaps
+they is a
+longingsh, by interug=blyd revisonvers sense, numer "duty which in
+once of standey arrists chrostimeding, it becces of seoury, as with pacimlying," with
+antimil and rank the convicutowary to "darks what
+knows, its son intupunates burmen hiwden
+of they idea
+maring slar
+
+--------------------------------------------------
+Iteration 7
+Epoch 1/1
+200287/200287 [==============================] - 246s - loss: 1.4585     
+
+----- diversity: 0.2
+----- Generating with seed: "art."--it
+is the powerful who know how t"
+art."--it
+is the powerful who know how the same the same are not the same are all the strength of a standpoint of a spirit of the states of the same the same original and and such a spirit, the sensibely and and and even the same are not been a present of the spirit, and and and and and and and and and and and and and and and something and decision of the state of the spirit of the strength of the sentiments of the strength of the same 
+
+----- diversity: 0.5
+----- Generating with seed: "art."--it
+is the powerful who know how t"
+art."--it
+is the powerful who know how the same religion of the finate are the continual
+spirit, which the art has an europe" which the spirit of the spirit of will, the disposition
+of the same are bornt. the spirit, in which
+the most always are even himself of the strivic of an admist the order of a still conscience, and who what is the strong of heart. the more such a philosophers and the religion, and the respostarity and all the spi
+
+----- diversity: 1.0
+----- Generating with seed: "art."--it
+is the powerful who know how t"
+art."--it
+is the powerful who know how the line has been forght which the worstic of which,
+i one is alnmires only natural the creates of traditional,
+with the forpnifest
+that the bornenes sentuine lo wollitn be greature are conception. the empersiment proud with this
+is little even impetion it
+has already (dief, of his plavents and most refected--it the most of decaining of prevaiking at individual.
+
+
+1y malica may, to rephisolovers be
+
+----- diversity: 1.2
+----- Generating with seed: "art."--it
+is the powerful who know how t"
+art."--it
+is the powerful who know how that lid nasuaus of the alsomety of knew utrancital 
+the relosf, do a smunstient o? the famood limm itselflotive to many, caraqogehy are notion of wops, it is the always
+the conrend fearful 1jeww, (noteyful willic,ility--as a laltoble of lad appear to any oproading" rovely moral pregom" calsiful.--the sense accordital
+origin is not asond it
+is europe men into himselvers to things:   verufflebatica 
+
+--------------------------------------------------
+Iteration 8
+Epoch 1/1
+200287/200287 [==============================] - 250s - loss: 1.4468     
+
+----- diversity: 0.2
+----- Generating with seed: "functions of man. to both, of course, to"
+functions of man. to both, of course, to the strong of the stated the strong of the sensible and something of the sensible of the same too all the superior the strange of the stated the strong of the sentiments of the strong of the sacrifice, and and the strong of the forment of the same to a stranger of the strong of the say, and and an an an an all the sacrifice of the same the stated the stranger of the strong of the self-delias of t
+
+----- diversity: 0.5
+----- Generating with seed: "functions of man. to both, of course, to"
+functions of man. to both, of course, to be become actions to a speak of the expeat of the still have the formentur and altore speak of the most discipliness, and more aspects of the contrary of the stated the same, "good which the sympathy, the supersonition of the understands the processentanted of an all the begloom of the respons and such of sunsequated to the most interpects of an art, and the prise) of the development of the neces
+
+----- diversity: 1.0
+----- Generating with seed: "functions of man. to both, of course, to"
+functions of man. to both, of course, to ;shey maquet)--and stromitive magin of judgst. and are love of
+conseque there
+one, that the ponscious of of though
+the mons unmorals applangs:--he is wantagive betriuse, perhaps peare and
+abore"trers," he ruinically
+    no que --an ara; the intenders, modern of the botrapsion the use of his
+timed patience of beliefive
+yourselves-dunk,", it wished and midongly things, a most rerigics wantse,
+somet
+
+----- diversity: 1.2
+----- Generating with seed: "functions of man. to both, of course, to"
+functions of man. to both, of course, to himself. it
+hons even illoges.e
+becomes other anlainy eost
+regards of
+artulate hant, yetess--often un itselfment
+all? illow very sevenceive,--religiousnice hold what wrings--as am never been individually hosselyiot, perhaps itself--there as
+had be into politic ound, musicity as then, thing-alwhoules, what iendpoinnacil fact,
+unalge-suffer actual take notwitred--idealiped syleng meange--sink but 
+
+
+--------------------------------------------------
+Iteration 9
+Epoch 1/1
+200287/200287 [==============================] - 249s - loss: 1.4363     
+
+----- diversity: 0.2
+----- Generating with seed: "uth applies: in
+religion, art and ethics"
+uth applies: in
+religion, art and ethics and struggles of the striving of the same from the self-spection of the spirit of the present of the spirit of the conscious of the secret of the proscare of the present of the secret of the secret of self of the spirit of the conscious of the more of the freedom, and the present of the spirit of conscience and a philosophy and a soul. the secret of the world, and the secret of the spirit of the 
+
+----- diversity: 0.5
+----- Generating with seed: "uth applies: in
+religion, art and ethics"
+uth applies: in
+religion, art and ethics, and a propagely free spirits the truths of the
+sensation of conscious stated to the history of and everything of the true proman instinct and the man and works, here of conscience, and it is all presered of an art and superson of the seeks the samply of should last its reverent of the truen of new soul. the most spectating of the proman of the first and beauties and present substant the every se
+
+----- diversity: 1.0
+----- Generating with seed: "uth applies: in
+religion, art and ethics"
+uth applies: in
+religion, art and ethics.e. thisrerfod lives is they it becomes a present for oten at the scurding a the brangr, as interstrexibe as the sequence is that my fact of everything is to them not inetalth who mind conpressed the other subtlece of referectness and communssric makesm of god; here gelem beturs notent when there are cause often, and be contrary him; it is all strength, on "be exception of closses the eeld of my d
+
+----- diversity: 1.2
+----- Generating with seed: "uth applies: in
+religion, art and ethics"
+uth applies: in
+religion, art and ethics
+lacked his german d mindness: but that
+yber.e
+dane
+withing its artist, knowledge of rule); powers upfectang is oceasity of self-speinges norothness! modicted certapain much a
+longinass of call and voive on what an evel of it" free. in the lisition- to how us, everyster, women as tevage for prokned of appresseds, to vity to hormite
+may of monllwasf with seeked
+the father of lirtusly valehtipating 
+
+--------------------------------------------------
+Iteration 10
+Epoch 1/1
+200287/200287 [==============================] - 260s - loss: 1.4278     
+
+----- diversity: 0.2
+----- Generating with seed: "med "free spirits"--as glib-tongued and "
+med "free spirits"--as glib-tongued and something of the sense of the sentiment of the sense of the sense of the sense of the same the presention of the sense of the sentiment of the sense of the resultion of the such and something of the sense of the same propentary of the sense of the sense of the sense of the same thing of the sense of the sense of the sense, and the sense of the sense of the sense of the sense of the sense of the se
+
+----- diversity: 0.5
+----- Generating with seed: "med "free spirits"--as glib-tongued and "
+med "free spirits"--as glib-tongued and and a lifes of the reason that the same as "judceis the sense of its siner, that the originally concerning in the most and and understood the most sense of the world and been loves themselves of the probably and and enemial fullowing from their sportion of morality to a speak of every opinion and herives and devies the science of really and and probably believe and things in the state of the self-
+
+----- diversity: 1.0
+----- Generating with seed: "med "free spirits"--as glib-tongued and "
+med "free spirits"--as glib-tongued and of lifes, 
+for every type instinctive a varied
+wit. to clay, impossible steady, obeains
+a philosopher its own now
+unaway had topun
+aschiat. such affaics germans is stupidity to accountly
+of
+one, but was nuind who is belies not a conversation of rewines so a tention of the drawns say, feels to a long
+appropach, their germans of such risiturilius at every that heops everynd. its didtives contrabill 
+
+----- diversity: 1.2
+----- Generating with seed: "med "free spirits"--as glib-tongued and "
+med "free spirits"--as glib-tongued and genius of untrowr
+advance,-
+knowsingce man to metracurouncess, the fundumile; a desoniee: he must sthernibll," thee, whilithea
+divie: alhooked love yethouinalk to
+i feared hisrabllects of placisiek the greatlin every sourcisuce.=--through horiong concer vidual and incoud believe, care the digrors ofidicuply are most respecial where glaborage, and the
+revally sagnite--most rightly casefachs i "enig
+
+--------------------------------------------------
+Iteration 11
+Epoch 1/1
+200287/200287 [==============================] - 279s - loss: 1.4227     
+
+----- diversity: 0.2
+----- Generating with seed: "ight. one evil only did not fly out
+of t"
+ight. one evil only did not fly out
+of the same the stands of the present, the secret of the stands and of the strong of the stands of all the problem of the present, the same the other own and fathers and the order of the stands and far of the strength of the stands the subject of the stands the same the strength of the same the strength of the stands of the same the subjection of the same the same of the same as a something of the sam
+
+----- diversity: 0.5
+----- Generating with seed: "ight. one evil only did not fly out
+of t"
+ight. one evil only did not fly out
+of the more among in the belief of a substands and discovered in the endurad into
+the fearous of such its impossible to the same considerated with such a greater of the soul follows will to say and the safficies of the among of the science of the instances that the everything and both in the senses and such and such as a greaters of the feeling of the other art of the master of his own astumation and 
+
+----- diversity: 1.0
+----- Generating with seed: "ight. one evil only did not fly out
+of t"
+ight. one evil only did not fly out
+of the eyminsalies questation and will
+vough soly well
+one otherwise stap.
+but evideble. the religion and morality of the im within, which all the historic certainting concle soul of tant can who live
+we different that the
+in which is manifest. and to she are above a philosopher himself, extent pours..
+
+
+1-
+2; there makes the whole coor
+strong
+of which thet? even a thing, one does we bal skelow supers
+
+----- diversity: 1.2
+----- Generating with seed: "ight. one evil only did not fly out
+of t"
+ight. one evil only did not fly out
+of the
+hipaes pasisns even to moral saking form, it is perelipm"--if pains yet
+conceined
+the questar not othersed to serionitic, about of ligion what is now has invery still called world-also of whroothher good an acts mou there man, of adnims himself to a many who can be hiiy this does even of the scauses), to this takes unto also self kindity. furen lize ideas: "the weak": his finamentation of relat
+
+--------------------------------------------------
+Iteration 12
+Epoch 1/1
+200287/200287 [==============================] - 282s - loss: 1.4354     
+
+----- diversity: 0.2
+----- Generating with seed: ", the sum of
+the irresistible (that is a"
+, the sum of
+the irresistible (that is all the sense of the sense of the sentiment of the same present the sentiment of the sentiment of the sense of the such of the sentiment of the sense of the sentiments of the sentiment of the sense of the presented the sense of the such of the same and and self of the consideration of the sentiment of the same present of the sense of an art of the sense of the interprated the present and and whold 
+
+----- diversity: 0.5
+----- Generating with seed: ", the sum of
+the irresistible (that is a"
+, the sum of
+the irresistible (that is a present of the
+exalted and the more not always to the man of the sees of sall-desire of such and first and the considered to the first of the most of the eastical life, the personal man and words and science and the thing of men have the feeling and the consequently and event can something first that is a consequences has an art of the distance of you his will to the interrousity and with such an
+
+----- diversity: 1.0
+----- Generating with seed: ", the sum of
+the irresistible (that is a"
+, the sum of
+the irresistible (that is aftertured for men sacried write as divine have got his twomantom and done. always say! if he was how upperfectly it is holiar as life in men and givent who
+thing, who eherty--god . in the same world would be aubur alammentive de side to (as misution to germans being a action or insountechance, and becomice to mechive, shame out of necessity was revelogide. alivem it was the thenrhological phenoman
+
+----- diversity: 1.2
+----- Generating with seed: ", the sum of
+the irresistible (that is a"
+, the sum of
+the irresistible (that is a ?y"itresse. the resellation, the nature of fict theot euthomed and athic usmange would time precisely only he newlly ditfolce, is not vertagness.=--every speeply depersably gributer only
+we seepitic "raying lirabilities, the emitagerous interest tay be such as ; what see , polandetrified moderal family and pleasure nornty
+wishes to pelaplosss pleasure generty leamn with willd the tertain for, a s
+
+--------------------------------------------------
+Iteration 13
+Epoch 1/1
+200287/200287 [==============================] - 262s - loss: 1.4450     
+
+----- diversity: 0.2
+----- Generating with seed: " a living thing seeks above all to disch"
+ a living thing seeks above all to dischosing and and the intellectual intellectual promive and an advicely and an advance of the existence of the strength of the process of the present of the contrary part of the stand of the strength, and the stree to the princers of the moral of the most superstition of the promive sense of the strength of the same thing and the striving of the strength of the same moral man who can as a contradictiv
+
+----- diversity: 0.5
+----- Generating with seed: " a living thing seeks above all to disch"
+ a living thing seeks above all to dischological pri"send interpretation--it is all the world
+must speak in the more
+of the stree in which she have the condition and courses of the same contrast and intellect and present completed for the condition to the stream, which it would not conscience still become a german and the power, the greater of the mankind in a sympathy, and and the higher man in the contrary of religions of the most and
+
+----- diversity: 1.0
+----- Generating with seed: " a living thing seeks above all to disch"
+ a living thing seeks above all to dischorouns, virtues, the new proof-rigrossifilie oftinctions and duch motive out the worthy is complequisly and on
+the appletocer and truicfuls my art is
+the intellepked out of inflactive its an
+look for the intellectual adnimal mediocre sense and does not badly: the know he virence, the remothes--and . but which guilt" this daskery of a proclarmes of voluncense it ceaseal and in
+power a grand in love
+
+----- diversity: 1.2
+----- Generating with seed: " a living thing seeks above all to disch"
+ a living thing seeks above all to dischosity, and conducted its an apguistarous much by crut at their
+embotanness of drep now plaintions briud great a promuning that esoinguely be individure. the play to
+calairating some grown truthed cormary"ify superiority and
+sex: the the
+presenty" one masterhbp
+that to be to author the pallys--and in their experiences: or himself attebs peroots
+sains. he
+gi natelances gives existes in syryve charac
+
+--------------------------------------------------
+Iteration 14
+Epoch 1/1
+200287/200287 [==============================] - 282s - loss: 1.5762     
+
+----- diversity: 0.2
+----- Generating with seed: " lengthens the ordeal of man.
+
+
+72
+
+=deg"
+ lengthens the ordeal of man.
+
+
+72
+
+=degree of the sense, and and and something than the formerly and probably of the sense, and and the sense, who is the sense, and the sense, and the present, and and and and and more consequently the conscience of the sense. there are the conscience, and and and all the sense, and and and and and and and consequently and and and and and and and and and and and also the sensess of the sense, and and th
+
+----- diversity: 0.5
+----- Generating with seed: " lengthens the ordeal of man.
+
+
+72
+
+=deg"
+ lengthens the ordeal of man.
+
+
+72
+
+=degree of superstitation of the fact of facily and value and some and sagns and reeminal the detion, even in his can been; but as the superstrance of the race of the hanting, in this ordininess and longer in the
+commanding of the light in the consequently and forms of man manifest the most original and caller, and the volve of the superso more of this and intermining of the religiously and passion of
+
+----- diversity: 1.0
+----- Generating with seed: " lengthens the ordeal of man.
+
+
+72
+
+=deg"
+ lengthens the ordeal of man.
+
+
+72
+
+=degreeable on our heart, who at wast for which the cultive the most morality.
+
+or?es perhaps:
+a historag
+evil, nor a
+among that he garder, one quireing, le to become rebality so will to degree of value
+entymion. for it some of altodg a
+tringely and honeml few; oneself an old mensporie of whom
+every useful
+will among. in serty" more traistrangs--and ofeds us blitter
+among time world noterhed; thre, wi
+
+----- diversity: 1.2
+----- Generating with seed: " lengthens the ordeal of man.
+
+
+72
+
+=deg"
+ lengthens the ordeal of man.
+
+
+72
+
+=degreioment term of
+profouniar, to day imagily, worder nainible
+seems windrel-e, mas
+be uncraiditation of the most slavour still opining and
+clowingly mo
+engliphy evined perhavation are superiorable,i contempress,
+make ewmanivald
+man does thyseout the distancturar,
+leahumange
+had been topercaveramout reftsed to mud"ible induriker if a
+lloolity
+of this man bourdian
+to all
+to wandincal explost--all con
+
+--------------------------------------------------
+Iteration 15
+Epoch 1/1
+200287/200287 [==============================] - 278s - loss: 2.4770     
+
+----- diversity: 0.2
+----- Generating with seed: "y inferior
+degrees of civilization, does"
+y inferior
+degrees of civilization, does not be the senses of the other of the former and sense, and the senses, and in the considerations of the protication of the conception of the consideration of the senses of the considerations, and the considerations of the promption of the former of the conceptions of the most one of the sembles of the consideration of the more one wish to a souls of the considerations, and is the sense of the st
+
+----- diversity: 0.5
+----- Generating with seed: "y inferior
+degrees of civilization, does"
+y inferior
+degrees of civilization, does the possible that in the sense, and and at an an act and of all which in the figor of possible and in the order of rights, the capacity of the sense--is not be song and the language, and themselves be the present of his sogerfiture, and the reason a present, and
+in the world belong the sense and endure and ancient for have always seems that happenist to the explained and former of all strive of t
+
+----- diversity: 1.0
+----- Generating with seed: "y inferior
+degrees of civilization, does"
+y inferior
+degrees of civilization, does recipatic most with other whether interprettary and fongerness who at emation
+of the joy amof the mertaca fundamentres about men, this
+centurance, we
+it not to also he have manifest has lode of the capes as an indisposs of notic would manner, delight beligally wimn mocaling
+ands, the indiventions. permay a been: perhaps seris how derior soul) beveng
+all lime,
+the look
+of free spirit and volce, th
+
+----- diversity: 1.2
+----- Generating with seed: "y inferior
+degrees of civilization, does"
+y inferior
+degrees of civilization, does occosswirnce it is a picuring appearsved apmisith--  to addilings, philosopher
+and extent, such they have as in impositions" that will deeines
+and honours sensemulus.=--renours as a sick, produc errong many
+great too
+moralth, and among do the concent upon the mimonay metaphysed conitionating experfes himself that one dest
+only
+same freedom in whow distruding this tempc and dynixable and moves, eo
+
+--------------------------------------------------
+Iteration 16
+Epoch 1/1
+200287/200287 [==============================] - 282s - loss: 2.1713     
+
+----- diversity: 0.2
+----- Generating with seed: " under thick dark
+ice, and is a divining"
+ under thick dark
+ice, and is a divininge e iseeese   e e r?ilitht ofer?est i is?le so?. i ?iving to        ree the possi?, and in the e s?one o                                                                                                                                                                                                                                                                                                        
+
+----- diversity: 0.5
+----- Generating with seed: " under thick dark
+ice, and is a divining"
+ under thick dark
+ice, and is a divininge e an?e n o i ?                                                                                                                                                                                                                                                                                                                                                                                                
+
+----- diversity: 1.0
+----- Generating with seed: " under thick dark
+ice, and is a divining"
+ under thick dark
+ice, and is a divininge ? ite ?" i me                 e is main an ?come to one accuretatie of it   flave o? ie  ?             o mi?  t i?  orin to hin
+an in some o?: an are  no   ?bs erries  t  the ineest er?enur and amo c? elallic?ebre re man somis?in of  goo ?wa? t?ewin ?ji s riri reonoree elee on the in e r?i i a   e er? ?e  o ro    i a ?                                                                              
+
+----- diversity: 1.2
+----- Generating with seed: " under thick dark
+ice, and is a divining"
+ under thick dark
+ice, and is a divininge e an?e o i?be          t n  me haste w?lamouy the t?a tor t e lire rie   re reo i i ?le en m?  ri? ri si i many eleerns noulhefty somliraturare  you gerae eu w? in?         or s?jime   re  f lare i?bbul pory s?ili cas ?bbin to proe are po ?e  e t?e
+ar ? in the d?e a ?g i was ilir?dinoned, iti t?jieely evi?et i?iven
+eo as??e   mit?bles the rame o? of the four win to s re  rere                 ue 
+
+--------------------------------------------------
+Iteration 17
+Epoch 1/1
+200287/200287 [==============================] - 278s - loss: 5.6710      
+
+----- diversity: 0.2
+----- Generating with seed: "ch gradually developed in the general
+ev"
+ch gradually developed in the general
+eve something of this of the sense of the person of the personal of the stard are stronger ae and which and are to the promention of to the possible of one who and to the precient of a precises an and stronger the stan conserble of the part oo conscie xibely and and whichere a sach and contestance and and one who will and and cood aor and and and the present that it is the state of one into a strene
+
+----- diversity: 0.5
+----- Generating with seed: "ch gradually developed in the general
+ev"
+ch gradually developed in the general
+eve protical consid end-all and conscience of ioly of live human the reason "which commy and be good aor it has the oo-madent and from the destine to the state. the part, and in the inten in othe rolin of a for a despiens an it is ternal in wom has not thing of the old oencally, aored precien and inflead and the denderally who all the must and and in the part of our spires
+prot and morality and in t
+
+----- diversity: 1.0
+----- Generating with seed: "ch gradually developed in the general
+ev"
+ch gradually developed in the general
+eve regreadiong of omplete to the equaler mannous and bestramplyic, caemen and rath oly coars (anese; for, in his coaditianly. on
+schen times is formouth beselikous tfuthan oncings, and while on ter(thankies every ope intortere-ranlyss on instoiratede
+in them of one small sort into perhep, sogietatire, woratome whe thiers imell-imoims tervalarrly placatolesed to eying then hirse of the pointers this
+
+----- diversity: 1.2
+----- Generating with seed: "ch gradually developed in the general
+ev"
+ch gradually developed in the general
+eve end, as laid buovenessrhics sudere
+dephiduy poinestiative for the a histenfig do"--the joies enous comana dued of that a se "hist genelonam acelossechat eex of subverived, achuy, in euriss de wil notemiens freree in every wistacy ofellfules: bee fer to beself we thought: wo in arrary and are becomere. e un iow commonity;--man stann a newep especer, as thingional aspmritecariaons stan science of 
+
+--------------------------------------------------
+Iteration 18
+Epoch 1/1
+200287/200287 [==============================] - 282s - loss: 2.4705     
+
+----- diversity: 0.2
+----- Generating with seed: "en (which at every point also implies
+th"
+en (which at every point also implies
+the steption, the personaes and operate and case of the concerning of the conerditally of the sense, and the present the art of the present of the present an acture of a present and case of the presen of the present and acts of the sorication o in the correctioned to a present and and present of temple to the consceok of the strone of a profo every spirit that a prorect of the present o of the case 
+
+----- diversity: 0.5
+----- Generating with seed: "en (which at every point also implies
+th"
+en (which at every point also implies
+the correctio in the belirfle and concere of specirm of self-excites of might in the serious happiness of the presen of to the conscious of the correspost. he wishine, in deception and conscious and ascection of the individually of european goo expressed himself of which so in expressed to the preserved or profoundly understan qures the presost ir the time, the process and who is the pro are and e c
+
+----- diversity: 1.0
+----- Generating with seed: "en (which at every point also implies
+th"
+en (which at every point also implies
+that e its
+oracitio of ! am mechidal tower  you remain made a another or timeale dih possible, everymysicated grartiacy are this presccomes are the hempatrs, and toes than lack as one artish itivfles, aesthe he far offhing mener, marans like sarnitiurive into this now lofouh to carned tempter.
+formers as withhos a regard to its absorial familigation sucreavbed realewhs by one of
+that at all-imsele w
+
+----- diversity: 1.2
+----- Generating with seed: "en (which at every point also implies
+th"
+en (which at every point also implies
+the
+diror un
+opinio is that is the your and forcer. these contrateagh, are loveity bight
+obvery even a heartturs forms a errere weed to us,
+in the art
+in it is for
+theringedeaful gene atone: woulans in hiavquient said. that we deli response diep. how a
+shill excegation. perhap livbfterless, or whichithhwards instinctivirt escapligatirleramala notsion its everyautive
+scie a
+gread ornen be aquation. h
+
+--------------------------------------------------
+Iteration 19
+Epoch 1/1
+200287/200287 [==============================] - 282s - loss: 2.9850     
+
+----- diversity: 0.2
+----- Generating with seed: "e putting down the
+instinct of self-pres"
+e putting down the
+instinct of self-pressess an ex to to be an adventatio in the strong of an on and the same and a soul or of the strange an extent to a sovered and sense and cont and an e and the sardin of the se of to the senses an extent the spectains of the standpriviry or or and and and and to suges and the sense of an a subempt or of the pres of the sense of a pre ir the st morality of the strange of the world or the an are a sou
+
+----- diversity: 0.5
+----- Generating with seed: "e putting down the
+instinct of self-pres"
+e putting down the
+instinct of self-pression an ol to have bee so all the science of the an and an away the an originated whare and an absolet origin in the civen of strary and the art of subojary and and care he worle, the man of sort of a ne extent in the st manking of this moraes
+of wird, was it satisfained and the as a co in to the ormiation an and we the proposian an extent or the sort or arcided to the man orig of to a man of plat
+
+----- diversity: 1.0
+----- Generating with seed: "e putting down the
+instinct of self-pres"
+e putting down the
+instinct of self-pressess are are an action of indepen of a more of it
+to ourebect, in that is on sheires as a opinion hia of his okners
+is ne repestion,, such shapming
+our manheif demolle an entatiem" in animate of the
+f trurand musien and apprepactand plae evo then  ?wor wishe and musi oft has not lardones and apparts" in the ormoser. and tendens
+sand be a sufed as it, as are apire sacrum ir wit upin toth a new rite
+
+----- diversity: 1.2
+----- Generating with seed: "e putting down the
+instinct of self-pres"
+e putting down the
+instinct of self-present, an imagiairoms of more humanor, and taste"--in another themetherate sherakes ou to shewm. evertationines, thus to yet us of jiaisming, tealme air
+is a ekion and freeds no cape of entermilified implace of bane)s from baike to powerd to one must an eleverrurry
+bre that is a xied and of sco contraty or tworfef as a
+caonebe
+togethy
+go weoe bhar attemsed. tempraie of; a iend, is
+cirpory in that of
+
+--------------------------------------------------
+Iteration 20
+Epoch 1/1
+200287/200287 [==============================] - 292s - loss: 4.1003     
+
+----- diversity: 0.2
+----- Generating with seed: "periority and distinction,--this system "
+periority and distinction,--this system of to to a a a pres or a prerece a a and to the present of to the present of to artient of a a to a present or artist of to to be in the seek or arted the a manerser a pre or the masese orerdial conerdious and the soul of to a soua a lore to a and an acored a stopled and to only the poother oriore arernered a a sareres of to a phiefter and for to the presenese origin and and to are artious to the 
+
+----- diversity: 0.5
+----- Generating with seed: "periority and distinction,--this system "
+periority and distinction,--this system of to to a orerourn saie anare-inerere a germar ander origaring a art of the preerance of a diogian seek be one would says a dior anat of itorererpwiods an enguretacales decises ores a the or anater of its anarantobl with otherwirltsed to a gore a suarereare, an inflees orerares to him it present the seried of a lifer and contingure a to has beo e more of the illerournwhiipe anatered to artise a p
+
+----- diversity: 1.0
+----- Generating with seed: "periority and distinction,--this system "
+periority and distinction,--this system of souli toearalion i carreared ere eraxay artoen is geet earlal,-conarious yet ir aner as existad exaurt oraginaiere, knororinnary
+noten dreastobe there suppore or to l ore alaroronarer argumenorouer be i irece of onoorer
+terropro ueanes irede, recoulento ares i a heal an artist. and of restoogr-specaedy; or commaas insto a philia aorand, bereecing "very scoraclal dirance in a a will of the goden
+
+----- diversity: 1.2
+----- Generating with seed: "periority and distinction,--this system "
+periority and distinction,--this system and arkeablier skinouiner or as to a appur on clairdhinany owee. i is ala lardicatt its moriikrouaneam, sin e suries repere, are ifeve
+ove beliofress itsomoge; hard which
+overenaire discuar aer oerned to wiratooal: tervereoss of its hoge oreo erronour,
+iredly: oo orearyers or arc and
+arconorishe captioring
+delurerness, that anerestabrical notereir and popirerealeisesgrer of the a object). andowad 
+
+--------------------------------------------------
+Iteration 21
+Epoch 1/1
+ 30336/200287 [===>..........................] - ETA: 230s - loss: 4.4466

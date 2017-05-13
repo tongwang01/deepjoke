@@ -1,0 +1,273 @@
+Last login: Sun May  7 22:07:35 on ttys001
+tongwang-macbookpro2:code tongwang$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tongwang-macbookpro2:code tongwang$ ls
+DeepJoke EDA.ipynb			generated_nietzsche_text		lstm_text_generation_jokes.py
+DeepJoke Preprocessing.ipynb		lstm_text_generation example.ipynb
+Icon?					lstm_text_generation.py
+tongwang-macbookpro2:code tongwang$ python lstm_text_generation_jokes.py 
+Using TensorFlow backend.
+corpus length: 48957387
+total chars: 177
+['\x08', '\t', '\n', '\r', '\x10', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', '\x7f', '\x80', '\x81', '\x82', '\x83', '\x84', '\x85', '\x86', '\x87', '\x88', '\x89', '\x8a', '\x8b', '\x8c', '\x8d', '\x8e', '\x8f', '\x90', '\x91', '\x92', '\x93', '\x94', '\x95', '\x96', '\x97', '\x98', '\x99', '\x9a', '\x9b', '\x9c', '\x9d', '\x9e', '\x9f', '\xa0', '\xa1', '\xa2', '\xa3', '\xa4', '\xa5', '\xa6', '\xa7', '\xa8', '\xa9', '\xaa', '\xab', '\xac', '\xad', '\xae', '\xaf', '\xb0', '\xb1', '\xb2', '\xb3', '\xb4', '\xb5', '\xb6', '\xb7', '\xb8', '\xb9', '\xba', '\xbb', '\xbc', '\xbd', '\xbe', '\xbf', '\xc2', '\xc3', '\xc4', '\xc5', '\xc6', '\xc7', '\xc9', '\xca', '\xcb', '\xcc', '\xcd', '\xce', '\xcf', '\xd0', '\xd1', '\xd2', '\xd4', '\xd7', '\xd8', '\xd9', '\xda', '\xdb', '\xe0', '\xe1', '\xe2', '\xe3', '\xe4', '\xe5', '\xe6', '\xe7', '\xe8', '\xe9', '\xeb', '\xec', '\xed', '\xee', '\xef', '\xf0']
+nb sequences: 4895729
+Vectorization...
+Killed: 9
+tongwang-macbookpro2:code tongwang$ python lstm_text_generation_jokes.py 
+Using TensorFlow backend.
+corpus length: 48957387
+total chars: 177
+['\x08', '\t', '\n', '\r', '\x10', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', '\x7f', '\x80', '\x81', '\x82', '\x83', '\x84', '\x85', '\x86', '\x87', '\x88', '\x89', '\x8a', '\x8b', '\x8c', '\x8d', '\x8e', '\x8f', '\x90', '\x91', '\x92', '\x93', '\x94', '\x95', '\x96', '\x97', '\x98', '\x99', '\x9a', '\x9b', '\x9c', '\x9d', '\x9e', '\x9f', '\xa0', '\xa1', '\xa2', '\xa3', '\xa4', '\xa5', '\xa6', '\xa7', '\xa8', '\xa9', '\xaa', '\xab', '\xac', '\xad', '\xae', '\xaf', '\xb0', '\xb1', '\xb2', '\xb3', '\xb4', '\xb5', '\xb6', '\xb7', '\xb8', '\xb9', '\xba', '\xbb', '\xbc', '\xbd', '\xbe', '\xbf', '\xc2', '\xc3', '\xc4', '\xc5', '\xc6', '\xc7', '\xc9', '\xca', '\xcb', '\xcc', '\xcd', '\xce', '\xcf', '\xd0', '\xd1', '\xd2', '\xd4', '\xd7', '\xd8', '\xd9', '\xda', '\xdb', '\xe0', '\xe1', '\xe2', '\xe3', '\xe4', '\xe5', '\xe6', '\xe7', '\xe8', '\xe9', '\xeb', '\xec', '\xed', '\xee', '\xef', '\xf0']
+nb sequences: 2447865
+Vectorization...
+Build model...
+2017-05-07 22:26:47.509237: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:26:47.509302: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:26:47.509307: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:26:47.509311: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:26:47.509315: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+Traceback (most recent call last):
+  File "lstm_text_generation_jokes.py", line 58, in <module>
+    optimizer = Adam()
+NameError: name 'Adam' is not defined
+tongwang-macbookpro2:code tongwang$ python lstm_text_generation_jokes.py 
+Using TensorFlow backend.
+corpus length: 48957387
+total chars: 177
+['\x08', '\t', '\n', '\r', '\x10', ' ', '!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~', '\x7f', '\x80', '\x81', '\x82', '\x83', '\x84', '\x85', '\x86', '\x87', '\x88', '\x89', '\x8a', '\x8b', '\x8c', '\x8d', '\x8e', '\x8f', '\x90', '\x91', '\x92', '\x93', '\x94', '\x95', '\x96', '\x97', '\x98', '\x99', '\x9a', '\x9b', '\x9c', '\x9d', '\x9e', '\x9f', '\xa0', '\xa1', '\xa2', '\xa3', '\xa4', '\xa5', '\xa6', '\xa7', '\xa8', '\xa9', '\xaa', '\xab', '\xac', '\xad', '\xae', '\xaf', '\xb0', '\xb1', '\xb2', '\xb3', '\xb4', '\xb5', '\xb6', '\xb7', '\xb8', '\xb9', '\xba', '\xbb', '\xbc', '\xbd', '\xbe', '\xbf', '\xc2', '\xc3', '\xc4', '\xc5', '\xc6', '\xc7', '\xc9', '\xca', '\xcb', '\xcc', '\xcd', '\xce', '\xcf', '\xd0', '\xd1', '\xd2', '\xd4', '\xd7', '\xd8', '\xd9', '\xda', '\xdb', '\xe0', '\xe1', '\xe2', '\xe3', '\xe4', '\xe5', '\xe6', '\xe7', '\xe8', '\xe9', '\xeb', '\xec', '\xed', '\xee', '\xef', '\xf0']
+nb sequences: 2447865
+Vectorization...
+Build model...
+2017-05-07 22:30:33.605131: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:30:33.605160: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:30:33.605167: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:30:33.605172: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2017-05-07 22:30:33.605177: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+
+--------------------------------------------------
+Iteration 1
+Epoch 1/1
+2447865/2447865 [==============================] - 17824s - loss: 1.9705     
+
+----- diversity: 0.2
+----- Generating with seed: " while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? wh"
+ while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? when he sees the bartender and says, "what do you call a bar her passed to the poon with a bar and started to the man and the bartender and starts to the poor and sees a light and says "what do you call a little the pronce of the bartender to the poor and says, "what do you call a partenter and says, "what do you call a comple says "what do you call a little who was a procomes and starts and says, "
+
+----- diversity: 0.5
+----- Generating with seed: " while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? wh"
+ while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? what was have a shope. the pirnigger and the with a ling some for a wand come working a perching the pontly and guy got the start or have and he is a bar. "help the pinnsting it, duy... he was prost the partand the sinds worad the later a really sound in a light and said, "i sick the bour of the starts comple water their bear don a start. the prost for a for with a woman and stepes and she was a wan
+
+----- diversity: 1.0
+----- Generating with seed: " while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? wh"
+ while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? when the guess and says, 'i waitens... tails to way? 'yeshed: "i can't has will goirg stippen…''’noches sounderstand stures — and pusse
+#
+a fight and chossating ut of here, but gooded the wand inte because trumps to the ghe rest vown to mige thatsed me eve he gonda to know precase to to be who sadventant of weals eeriquis."  mon3 car it as a sazan torner when a pullso staic on." says teates ou
+
+----- diversity: 1.2
+----- Generating with seed: " while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? wh"
+ while fencing... then i realized it was a riposte.
+#
+what did the joker say to the dwarf planet? when deporvenderger jokens exliteld," with, and if you said!" snight ask, lwifs!”
+g've seece say!"  fint,.
+after clink of baty stuppe it i'm fronghalder husbred."
+"what’s "wheys!!!
+#
+why do you ***"woo!" mum ounsehach of his 1:2...pock. son. ” letty, *o|" wi wis legles q0ech, plock, betomen lostont cooks him lord dadk with it staryt to lik wryins.  
+6q "zy thin lageed mame exflo[del
+of for?".?
+
+--------------------------------------------------
+Iteration 2
+Epoch 1/1
+2447865/2447865 [==============================] - 26357s - loss: 1.6381     
+
+----- diversity: 0.2
+----- Generating with seed: "i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the"
+i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the difference between a start and says to the chicken and says "i don't know that was a couple of the door and says "and the first thing and says "you want to the doctor and says "you can do you can't the chicken and says "i'm so he said the chicken says, "i don't know what is the bartender says "i'm a boy that he said to the doctor the doctor says "i'm so he says "you want to the first says "i'm so
+
+----- diversity: 0.5
+----- Generating with seed: "i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the"
+i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the chicken can't student and the dock and the chicken says, "what do you catch with you ask don't know marious and the man could be a parrot, and says "i'm a long and says the woman coming the chinesa dear.
+#
+whit is the peanes to says the contious of the sound of a bar and he was stripps his his house? a small them to a gen bartender for a three stoppers and says the fores and she says "you were al
+
+----- diversity: 1.0
+----- Generating with seed: "i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the"
+i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the chow many tosteg in the kill
+anywhat carble currod like there and sit, be the groum 3 and says, which low? behns? bright into the curtaut and before the corguttustes over and says temons ago who, i chinese you'll that's your wey... 
+#
+what do 4 baby?! two wife cat doos.  
+#
+what do thite wish can't the causid samp "well, if a white guy behist men his balfs.
+#
+why are poles bicldan.
+#
+what do you 
+
+----- diversity: 1.2
+----- Generating with seed: "i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the"
+i have never understood telephones
+,i mean, how can sound travel at the speed of light
+#
+why did the daby  it opan so go. nivericractor? 111; 
+#
+c1namaris: "i nivie tigug with me?"   two catcolar" is with motitf cather screbloned only wife here," there is by you michage...
+#., ripsy legs blabiicivar johson thied worked be that deess
+#
+hava excide, 5 --graini why did you week wind thistroatly noldy? fress," seepwy doginging. the kit, and down acter acrissed of tabobic bie haldchants sque flug... 
+
+--------------------------------------------------
+Iteration 3
+Epoch 1/1
+2447865/2447865 [==============================] - 17331s - loss: 1.5198     
+
+----- diversity: 0.2
+----- Generating with seed: " again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and "
+ again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and then then he can have a blonde and says "i have the friend was the bedroom and says "i'm going to a teacher and says "i don't have a son and then the prine says, "i don't know what the hell of the first man walks into a bar and says "i'm gonna have a house. the really says "i'm not do what the man asks the door and says "i'm going to be a son what he had a friend and says, "i have a few more there
+
+----- diversity: 0.5
+----- Generating with seed: " again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and "
+ again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and that is heard the business and sees there are the pilot for the road. then says the finishing with a bar, and then he spong to his to full and says "what the money and says, "i got a teacher that sits down the world hands for a black skin who had a waiting and says "i'm sorry then i don't have a little bar, and then all the first thing about the britts to the doctor in and had to father and then h
+
+----- diversity: 1.0
+----- Generating with seed: " again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and "
+ again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and asks "well i sus arrive your hands withing for owf when i'n tablet the dud bulls.
+#
+recent is friend up in.
+#
+a while is this can, that i need upean mexicans, your mustreals pull receripation of holped forwar
+#
+trump and --threw young head.  you dingo blue up. #
+excrecon a kne's name roman, husband apresicting biredese bycay, 'please so up. i'm cons
+#
+what is the time? bear room... bical you spits
+
+----- diversity: 1.2
+----- Generating with seed: " again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and "
+ again.”
+the man, anguished and betrayed, immediately went into his bedroom, grabbed his gun, and dear starts'so, than abriet that...goined anover'll all of u."
+#
+eny i wins to be trugsnable: to do tips to kelly maje, aboes don't go him when grands invelt, jokes her by d.whates owner for* daw.i too.
+#
+there trepingsteins shasil lyfel goantly shat? an houring and needs like godd hotsent dres. hillarys asks him it's drankwor, cause when and sweck, behon tak horrs a sustand '40-1.0.  i.a!" the ou
+
+--------------------------------------------------
+Iteration 4
+Epoch 1/1
+2447865/2447865 [==============================] - 20666s - loss: 1.4516     
+
+----- diversity: 0.2
+----- Generating with seed: " cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will prob"
+ cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will probably say the bartender and says "i was the bartender and it was a shake the farmer and the man says "i was the bartender in the first thing in the first thing and the first take the farmer and the bartender says "i was so he says "you have the third good and in the man and the father is a shot and the father is a really and the man asks the car and the third guy walks into a bar. the priest says t
+
+----- diversity: 0.5
+----- Generating with seed: " cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will prob"
+ cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will prob em the bartender walks out for a feel and says "mom it was very and the tall his pearly and husband: "i was american hard in the funny." the bartender says "you will both the car of all his friend. i guess i can have she can i he only walk in upon on the world. and says the rabbit of your care in the beach. after an all the claps said the fairy and he had are the sky why the priest replied "i can
+
+----- diversity: 1.0
+----- Generating with seed: " cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will prob"
+ cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will probably lattle another. 
+us" the bus dead responses launters, wathtay hears as a boil more putby had all and says to a petich! this is earhots are so i work in all this all day
+#
+my nun says and disqueet, i'll keep but it funny noticed a triving. there only 3rd of his accovisge   "why am yoully? kick meanaunt) in you're just time in usele, and non is ach fat... unliverur: little woman, 1!
+#
+mally] gr
+
+----- diversity: 1.2
+----- Generating with seed: " cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will prob"
+ cartoons always had ragged clothes. but his have lasted without any
+rips so far. somebody will probarn opplipa so where'ly supply about to my grandia's sittoun sair. opently dres *our other god! hard puts start. would mate: i nating 1/00 am good neidhy).
+# accided drink and bird jews up
+a gur complashid they's readly.
+#
+how many ckeknatior, borr? a crailed an enoy 0^no, tunnes $00,090 my mimnia
+#
+neckinates baying (my ~ifiazlly lay berrips
+#
+why did the markets fela a jokes? nentiam
+#
+what's be
+
+--------------------------------------------------
+Iteration 5
+Epoch 1/1
+ 337408/2447865 [===>..........................] - ETA: 15461s - loss: 1.4129
