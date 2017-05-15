@@ -1,8 +1,10 @@
+from __future__ import print_function
 import os
 import sys
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from datetime import datetime
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
@@ -16,7 +18,12 @@ np.random.seed(123)
 BASE_DIR = os.getcwd()
 GLOVE_DIR = BASE_DIR.replace("/code", "/glove.6B/")
 TEXT_DATA_DIR = BASE_DIR.replace("/code", '/joke-dataset/')
-MODEL_DIR = BASE_DIR + "/models/"
+MODEL_DIR = BASE_DIR + "/models/{:%Y%m%d_%H%M%S}/".format(datetime.now()) 
+try:
+	os.mkdir(MODEL_DIR)
+except:
+	print("Did not make model dir")
+
 
 # Model params
 VALIDATION_SPLIT = 0.2
@@ -26,7 +33,7 @@ EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
 EPOCHS = 5
-MAX_NB_EXAMPLES = 20000  # Sample a fraction of examples to speed up training
+MAX_NB_EXAMPLES = None  # Sample a fraction of examples to speed up training
 
 # Sampling params
 STARTER_SENTENCE = "donald trump walks into a bar"
@@ -47,25 +54,35 @@ def combine_title_body((title, body), verify_chars=15):
         combined = title + " " + body
     return combined
 
+def clean_punc(s):
+ 	# Function to preserve some punctuation marks
+    s = s.replace("?", " ?")
+    s = s.replace(".", " .")
+    s = s.replace(",", " ,")
+    return s
+
 # Extract texts and scores
 texts = map(combine_title_body, zip(reddit_data["title"].tolist(), reddit_data["body"].tolist()))
 texts = [unidecode(text) for text in texts] # Get rid of unicode characters
+texts = map(clean_punc, texts) # clean up punctuations 
 scores = reddit_data["score"].tolist()
 print("Read in {} jokes.".format(len(texts)))
 print("Read in {} scores.".format(len(scores)))
 
 # Shrink dataset to speed up training, if needed
-nb_examples = min(MAX_NB_EXAMPLES, len(texts))
-texts = texts[:nb_examples]
-scores = scores[:nb_examples]
+if MAX_NB_EXAMPLES is not None:
+	nb_examples = min(MAX_NB_EXAMPLES, len(texts))
+	texts = texts[:nb_examples]
+	scores = scores[:nb_examples]
 
 # Tokenzie texts and labels
-filters = '\t\n'
+filters = '!"#$%&()*+-/:;<=>@[\\]^_`{|}~\t\n'
 tokenizer = Tokenizer(num_words=MAX_NB_WORDS, filters=filters)
 tokenizer.fit_on_texts(texts)
 sequences = tokenizer.texts_to_sequences(texts)
 
 word_index = tokenizer.word_index
+reserse_word_index = {index: word for word, index in word_index.iteritems()}
 print('Found %s unique tokens.' % len(word_index))
 num_words = min(MAX_NB_WORDS, len(word_index))
 
@@ -134,22 +151,6 @@ preds_l = Dense(num_words + 1, activation='softmax')(x)
 def sample_weight_func(scores):
     return scores + 1
 
-# Train model
-print('Training model.')
-l_model = Model(sequence_input, preds_l)
-l_model.compile(loss='sparse_categorical_crossentropy',
-              optimizer='adam')
-
-for epoch in range(EPOCHS):
-	l_model.fit(x_train, y_train_l,
-          batch_size=BATCH_SIZE,
-          epochs=1,
-          validation_data=(x_val, y_val_l))
-	generate_sentence(l_model)
-	l_model.save(MODEL_DIR + "checkpoint_epoch_{}".format(epoch))
-
-# Sampling outputs from LSTM
-
 def sample(preds, temperature=1.0):
     # helper function to sample an index from a probability array
     preds = np.asarray(preds).astype('float64')
@@ -187,3 +188,22 @@ def generate_sentence(model, starter_sentence=STARTER_SENTENCE,
         pred_sentence = " ".join(pred_sentence)
         print(pred_sentence)
         print()
+
+# Train model
+print('Training model.')
+l_model = Model(sequence_input, preds_l)
+l_model.compile(loss='sparse_categorical_crossentropy',
+              optimizer='adam')
+
+for epoch in range(EPOCHS):
+	l_model.fit(x_train, y_train_l,
+          batch_size=BATCH_SIZE,
+          epochs=1,
+          validation_data=(x_val, y_val_l))
+	l_model.save(MODEL_DIR + "checkpoint_epoch_{}".format(epoch))
+	try:
+		generate_sentence(l_model)
+	except:
+		print("Error generating sentence")
+
+
