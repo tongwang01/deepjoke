@@ -1,10 +1,12 @@
 from __future__ import print_function
 import os
 import sys
+import logging
+from datetime import datetime
+
 import numpy as np
 import pandas as pd
-import seaborn as sns
-from datetime import datetime
+
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
@@ -23,22 +25,41 @@ MODEL_DIR = BASE_DIR + "/models/{:%Y%m%d_%H%M%S}/".format(datetime.now())
 # Model params
 VALIDATION_SPLIT = 0.2
 MAX_SEQUENCE_LENGTH = 300
-MAX_NB_WORDS = 10000
+MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
 EPOCHS = 5
 MAX_NB_EXAMPLES = None # Sample a fraction of examples to speed up training
+TRAIN_SCORE_THRESHOLD = 5
 NB_SHARDS = 10
 
 # Sampling params
-STARTER_SENTENCE = "donald trump walks into a bar"
+STARTER_SENTENCE = "A man walks into a bar"
 
 # Make model dir if needed
 try:
 	os.mkdir(MODEL_DIR)
 except:
-	print("Did not make model dir")
+	logger.info("Did not make model dir")
+
+# Logging
+logger = logging.getLogger("deepjoke_lstm")
+logger.setLevel(logging.INFO)
+logging.basicConfig(filename = (MODEL_DIR + 'model_log.log'), level=logging.INFO)
+
+# Log model params
+logger.info("VALIDATION_SPLIT = {} \
+    MAX_SEQUENCE_LENGTH = {} \
+    MAX_NB_WORDS = {} \
+    EMBEDDING_DIM = {} \
+    LSTM_SIZE = {} \
+    BATCH_SIZE = {} \
+    EPOCHS = {} \
+    MAX_NB_EXAMPLES = {} \
+    TRAIN_SCORE_THRESHOLD = {} \
+    NB_SHARDS = {}".format(VALIDATION_SPLIT, MAX_SEQUENCE_LENGTH, MAX_NB_WORDS, EMBEDDING_DIM, 
+    LSTM_SIZE, BATCH_SIZE, EPOCHS, MAX_NB_EXAMPLES, TRAIN_SCORE_THRESHOLD, NB_SHARDS))
 
 # Read in data
 reddit_data = pd.read_json(TEXT_DATA_DIR + "reddit_jokes.json", encoding='utf-8')
@@ -57,10 +78,12 @@ def combine_title_body((title, body), verify_chars=15):
     return combined
 
 def clean_punc(s):
- 	# Function to preserve some punctuation marks
-    s = s.replace("?", " ?")
-    s = s.replace(".", " .")
-    s = s.replace(",", " ,")
+    # Function to clean up punctuations
+    s = s.replace("...", " ")
+    s = s.replace("..", " ")
+    s = s.replace("?", " ? ")
+    s = s.replace(".", " . ")
+    s = s.replace(",", " , ")
     return s
 
 # Extract texts and scores
@@ -68,10 +91,17 @@ texts = map(combine_title_body, zip(reddit_data["title"].tolist(), reddit_data["
 texts = [unidecode(text) for text in texts] # Get rid of unicode characters
 texts = map(clean_punc, texts) # clean up punctuations 
 scores = reddit_data["score"].tolist()
+logger.info("Read in {} jokes.".format(len(texts)))
+logger.info("Read in {} scores.".format(len(scores)))
 print("Read in {} jokes.".format(len(texts)))
 print("Read in {} scores.".format(len(scores)))
 
+
 # Shrink dataset to speed up training, if needed
+if TRAIN_SCORE_THRESHOLD > 0:
+    idx = [i for i in range(len(scores)) if scores[i]>=TRAIN_SCORE_THRESHOLD]
+    texts = [texts[i] for i in idx]
+    scores = [scores[i] for i in idx]
 if MAX_NB_EXAMPLES is not None:
 	nb_examples = min(MAX_NB_EXAMPLES, len(texts))
 	texts = texts[:nb_examples]
@@ -85,6 +115,7 @@ sequences = tokenizer.texts_to_sequences(texts)
 
 word_index = tokenizer.word_index
 reserse_word_index = {index: word for word, index in word_index.iteritems()}
+logger.info('Found %s unique tokens.' % len(word_index));
 print('Found %s unique tokens.' % len(word_index))
 num_words = min(MAX_NB_WORDS, len(word_index))
 
@@ -95,9 +126,13 @@ l_labels = np.append(data[:,1:], np.zeros((data.shape[0],1)),
                      axis=1).astype("int32").reshape(data.shape[0], data.shape[1], 1)
 s_labels = np.asarray(scores) # labels for the scoring model
 
-print('Shape of data tensor:', data.shape)
-print('Shape of language model label tensor:', l_labels.shape)
-print('Shape of scoring model label tensor:', s_labels.shape)
+logger.info('Shape of data tensor: {}'.format(data.shape))
+logger.info('Shape of language model label tensor: {}'.format(l_labels.shape))
+logger.info('Shape of scoring model label tensor: {}'.format(s_labels.shape))
+print('Shape of data tensor: {}'.format(data.shape))
+print('Shape of language model label tensor: {}'.format(l_labels.shape))
+print('Shape of scoring model label tensor: {}'.format(s_labels.shape))
+
 
 # Split the data into a training set and a validation set
 indices = np.arange(data.shape[0])
@@ -115,6 +150,7 @@ y_val_l = l_labels[-num_validation_samples:]
 y_val_s = s_labels[-num_validation_samples:]
 
 # Read in Glove vectors
+logger.info('Indexing word vectors.')
 print('Indexing word vectors.')
 
 embeddings_index = {}
@@ -169,9 +205,11 @@ def generate_sentence(model, starter_sentence=STARTER_SENTENCE,
         cur_sequence = tokenizer.texts_to_sequences(cur_sentence)
         cur_sequence = pad_sequences(cur_sequence, maxlen=MAX_SEQUENCE_LENGTH,
                     padding='post', truncating='post')
-        print()
-        print('----- diversity:', diversity)
-        print('----- Generating with seed: "' + cur_sentence[0] + '"')
+        logger.info(' '); print()
+        logger.info('----- diversity: {}'.format(diversity)); print('----- diversity: {}'.format(diversity))
+        logger.info('----- Generating with seed: "{}"'.format(cur_sentence[0]))
+        print('----- Generating with seed: "{}"'.format(cur_sentence[0]))
+        logger.info(' ')
         print()
         
         while True:
@@ -187,11 +225,13 @@ def generate_sentence(model, starter_sentence=STARTER_SENTENCE,
         pred_sequence = cur_sequence[0][cur_sequence[0]>0]
         pred_sentence = [reserse_word_index[pred_sequence[i]] for i in range(len(pred_sequence))]
         pred_sentence = " ".join(pred_sentence)
+        logger.info(pred_sentence)
+        logger.info(' ')
         print(pred_sentence)
-        print()
+        print(' ')       
 
 # Train model
-print('Training model.')
+logger.info('Training model.'); print('Training model.')
 l_model = Model(sequence_input, preds_l)
 l_model.compile(loss='sparse_categorical_crossentropy',
               optimizer='adam')
@@ -200,28 +240,32 @@ l_model.compile(loss='sparse_categorical_crossentropy',
 examples_per_shard = int(x_train.shape[0] / (NB_SHARDS-1))
 
 for epoch in range(EPOCHS):
-	print()
-	print("Grand epoch {}".format(epoch))
-	print()
-	for shard in range(NB_SHARDS):
-		print("Training on shard {}/{}".format(shard, NB_SHARDS))
-
-		if shard != NB_SHARDS - 1:
+    logger.info(' ')
+    print('')
+    logger.info("Grand epoch {}".format(epoch))
+    print("Grand epoch {}".format(epoch))
+    logger.info(' ')
+    print('')
+    for shard in range(NB_SHARDS):
+        logger.info("Training on shard {}/{}".format(shard, NB_SHARDS))
+        print("Training on shard {}/{}".format(shard, NB_SHARDS))
+        if shard != NB_SHARDS - 1:
 			x_train_now = x_train[shard * examples_per_shard: (shard + 1) * examples_per_shard]
 			y_train_l_now = y_train_l[shard * examples_per_shard: (shard + 1) * examples_per_shard]
 			y_train_s_now = y_train_s[shard * examples_per_shard: (shard + 1) * examples_per_shard]
-		else:
+        else:
 			x_train_now = x_train[shard * examples_per_shard: ]
 			y_train_l_now = y_train_l[shard * examples_per_shard: ]
 			y_train_s_now = y_train_s[shard * examples_per_shard: ]
 
-		l_model.fit(x_train_now, y_train_l_now,
+        l_model.fit(x_train_now, y_train_l_now,
 			batch_size=BATCH_SIZE,
           	sample_weight = sample_weight_func(y_train_s_now),
           	epochs=1,
           	validation_data=(x_val, y_val_l))
-		l_model.save(MODEL_DIR + "checkpoint_epoch_{}_shard_{}".format(epoch, shard))
-		try:
-			generate_sentence(l_model)
-		except:
-			print("Error generating sentence")
+        l_model.save(MODEL_DIR + "checkpoint_epoch_{}_shard_{}".format(epoch, shard))
+        try:
+            generate_sentence(l_model)
+        except:
+            logger.info("Error generating sentence")
+            print("Error generating sentence")
