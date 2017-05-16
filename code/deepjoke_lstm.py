@@ -103,9 +103,9 @@ if TRAIN_SCORE_THRESHOLD > 0:
     texts = [texts[i] for i in idx]
     scores = [scores[i] for i in idx]
 if MAX_NB_EXAMPLES is not None:
-	nb_examples = min(MAX_NB_EXAMPLES, len(texts))
-	texts = texts[:nb_examples]
-	scores = scores[:nb_examples]
+    nb_examples = min(MAX_NB_EXAMPLES, len(texts))
+    texts = texts[:nb_examples]
+    scores = scores[:nb_examples]
 
 # Tokenzie texts and labels
 filters = '!"#$%&()*+-/:;<=>@[\\]^_`{|}~\t\n'
@@ -250,19 +250,19 @@ for epoch in range(EPOCHS):
         logger.info("Training on shard {}/{}".format(shard, NB_SHARDS))
         print("Training on shard {}/{}".format(shard, NB_SHARDS))
         if shard != NB_SHARDS - 1:
-			x_train_now = x_train[shard * examples_per_shard: (shard + 1) * examples_per_shard]
-			y_train_l_now = y_train_l[shard * examples_per_shard: (shard + 1) * examples_per_shard]
-			y_train_s_now = y_train_s[shard * examples_per_shard: (shard + 1) * examples_per_shard]
+            x_train_now = x_train[shard * examples_per_shard: (shard + 1) * examples_per_shard]
+            y_train_l_now = y_train_l[shard * examples_per_shard: (shard + 1) * examples_per_shard]
+            y_train_s_now = y_train_s[shard * examples_per_shard: (shard + 1) * examples_per_shard]
         else:
 			x_train_now = x_train[shard * examples_per_shard: ]
-			y_train_l_now = y_train_l[shard * examples_per_shard: ]
-			y_train_s_now = y_train_s[shard * examples_per_shard: ]
+            y_train_l_now = y_train_l[shard * examples_per_shard: ]
+            y_train_s_now = y_train_s[shard * examples_per_shard: ]
 
         l_model.fit(x_train_now, y_train_l_now,
-			batch_size=BATCH_SIZE,
-          	sample_weight = sample_weight_func(y_train_s_now),
-          	epochs=1,
-          	validation_data=(x_val, y_val_l))
+            batch_size=BATCH_SIZE,
+            sample_weight = sample_weight_func(y_train_s_now),
+            epochs=1,
+            validation_data=(x_val, y_val_l))
         l_model.save(MODEL_DIR + "checkpoint_epoch_{}_shard_{}".format(epoch, shard))
         try:
             generate_sentence(l_model)
