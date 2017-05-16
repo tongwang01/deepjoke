@@ -19,11 +19,6 @@ BASE_DIR = os.getcwd()
 GLOVE_DIR = BASE_DIR.replace("/code", "/glove.6B/")
 TEXT_DATA_DIR = BASE_DIR.replace("/code", '/joke-dataset/')
 MODEL_DIR = BASE_DIR + "/models/{:%Y%m%d_%H%M%S}/".format(datetime.now()) 
-try:
-	os.mkdir(MODEL_DIR)
-except:
-	print("Did not make model dir")
-
 
 # Model params
 VALIDATION_SPLIT = 0.2
@@ -33,10 +28,17 @@ EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
 EPOCHS = 5
-MAX_NB_EXAMPLES = None  # Sample a fraction of examples to speed up training
+MAX_NB_EXAMPLES = None # Sample a fraction of examples to speed up training
+NB_SHARDS = 10
 
 # Sampling params
 STARTER_SENTENCE = "donald trump walks into a bar"
+
+# Make model dir if needed
+try:
+	os.mkdir(MODEL_DIR)
+except:
+	print("Did not make model dir")
 
 # Read in data
 reddit_data = pd.read_json(TEXT_DATA_DIR + "reddit_jokes.json", encoding='utf-8')
@@ -85,7 +87,6 @@ word_index = tokenizer.word_index
 reserse_word_index = {index: word for word, index in word_index.iteritems()}
 print('Found %s unique tokens.' % len(word_index))
 num_words = min(MAX_NB_WORDS, len(word_index))
-
 
 data = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH,
                     padding='post', truncating='post')
@@ -195,15 +196,32 @@ l_model = Model(sequence_input, preds_l)
 l_model.compile(loss='sparse_categorical_crossentropy',
               optimizer='adam')
 
+# Split training data into shards to get more frequent feedback
+examples_per_shard = int(x_train.shape[0] / (NB_SHARDS-1))
+
 for epoch in range(EPOCHS):
-	l_model.fit(x_train, y_train_l,
-          batch_size=BATCH_SIZE,
-          epochs=1,
-          validation_data=(x_val, y_val_l))
-	l_model.save(MODEL_DIR + "checkpoint_epoch_{}".format(epoch))
-	try:
-		generate_sentence(l_model)
-	except:
-		print("Error generating sentence")
+	print()
+	print("Grand epoch {}".format(epoch))
+	print()
+	for shard in range(NB_SHARDS):
+		print("Training on shard {}/{}".format(shard, NB_SHARDS))
 
+		if shard != NB_SHARDS - 1:
+			x_train_now = x_train[shard * examples_per_shard: (shard + 1) * examples_per_shard]
+			y_train_l_now = y_train_l[shard * examples_per_shard: (shard + 1) * examples_per_shard]
+			y_train_s_now = y_train_s[shard * examples_per_shard: (shard + 1) * examples_per_shard]
+		else:
+			x_train_now = x_train[shard * examples_per_shard: ]
+			y_train_l_now = y_train_l[shard * examples_per_shard: ]
+			y_train_s_now = y_train_s[shard * examples_per_shard: ]
 
+		l_model.fit(x_train_now, y_train_l_now,
+			batch_size=BATCH_SIZE,
+          	sample_weight = sample_weight_func(y_train_s_now),
+          	epochs=1,
+          	validation_data=(x_val, y_val_l))
+		l_model.save(MODEL_DIR + "checkpoint_epoch_{}_shard_{}".format(epoch, shard))
+		try:
+			generate_sentence(l_model)
+		except:
+			print("Error generating sentence")
