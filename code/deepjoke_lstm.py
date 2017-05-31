@@ -3,9 +3,11 @@ import os
 import sys
 import logging
 from datetime import datetime
+import time
 
 import numpy as np
 import pandas as pd
+import tensorflow as tf
 
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
@@ -30,7 +32,7 @@ EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
 EPOCHS = 5
-MAX_NB_EXAMPLES = None # Sample a fraction of examples to speed up training
+MAX_NB_EXAMPLES = 200 # Sample a fraction of examples to speed up training
 TRAIN_SCORE_THRESHOLD = 5
 NB_SHARDS = 10
 
@@ -39,9 +41,9 @@ STARTER_SENTENCE = "A man walks into a bar"
 
 # Make model dir if needed
 try:
-	os.mkdir(MODEL_DIR)
+    os.mkdir(MODEL_DIR)
 except:
-	logger.info("Did not make model dir")
+    logger.info("Did not make model dir")
 
 # Logging
 logger = logging.getLogger("deepjoke_lstm")
@@ -149,48 +151,18 @@ x_val = data[-num_validation_samples:]
 y_val_l = l_labels[-num_validation_samples:]
 y_val_s = s_labels[-num_validation_samples:]
 
-# Read in Glove vectors
-logger.info('Indexing word vectors.')
-print('Indexing word vectors.')
-
-embeddings_index = {}
-f = open(os.path.join(GLOVE_DIR, 'glove.6B.100d.txt'))
-for line in f:
-    values = line.split()
-    word = values[0]
-    coefs = np.asarray(values[1:], dtype='float32')
-    embeddings_index[word] = coefs
-f.close()
-
-# Prepare embedding matrix
-embedding_matrix = np.zeros((num_words + 1, EMBEDDING_DIM))
-for word, i in word_index.items():
-    if i >= MAX_NB_WORDS:
-        continue
-    embedding_vector = embeddings_index.get(word)
-    if embedding_vector is not None:
-        # words not found in embedding index will be all-zeros.
-        embedding_matrix[i] = embedding_vector
-
-# Load embedding in Embedding layer
-embedding_layer = Embedding(num_words + 1,
-                            EMBEDDING_DIM,
-                            weights=[embedding_matrix],
-                            input_length=MAX_SEQUENCE_LENGTH,
-                            trainable=False)
-
-# Build language model
-sequence_input = Input(shape=(MAX_SEQUENCE_LENGTH, ), dtype='int32')
-embedded_sequences = embedding_layer(sequence_input)
-x = LSTM(LSTM_SIZE, return_sequences=True)(embedded_sequences)
-preds_l = Dense(num_words + 1, activation='softmax')(x)
-
 def sample_weight_func(scores):
     return scores + 1
+
+def softmax(x):
+    """Compute softmax values for each sets of scores in x."""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum()
 
 def sample(preds, temperature=1.0):
     # helper function to sample an index from a probability array
     preds = np.asarray(preds).astype('float64')
+    preds = softmax(preds)  # Convert logits into probabilities
     preds = np.log(preds) / temperature
     exp_preds = np.exp(preds)
     preds = exp_preds / np.sum(exp_preds)
@@ -228,18 +200,56 @@ def generate_sentence(model, starter_sentence=STARTER_SENTENCE,
         logger.info(pred_sentence)
         logger.info(' ')
         print(pred_sentence)
-        print(' ')       
+        print(' ')   
 
+# Read in Glove vectors
+logger.info('Indexing word vectors.')
+print('Indexing word vectors.')
+
+embeddings_index = {}
+f = open(os.path.join(GLOVE_DIR, 'glove.6B.100d.txt'))
+for line in f:
+    values = line.split()
+    word = values[0]
+    coefs = np.asarray(values[1:], dtype='float32')
+    embeddings_index[word] = coefs
+f.close()
+
+# Prepare embedding matrix
+embedding_matrix = np.zeros((num_words + 1, EMBEDDING_DIM))
+for word, i in word_index.items():
+    if i >= MAX_NB_WORDS:
+        continue
+    embedding_vector = embeddings_index.get(word)
+    if embedding_vector is not None:
+        # words not found in embedding index will be all-zeros.
+        embedding_matrix[i] = embedding_vector
+
+# Load embedding in Embedding layer
+embedding_layer = Embedding(num_words + 1,
+                            EMBEDDING_DIM,
+                            weights=[embedding_matrix],
+                            input_length=MAX_SEQUENCE_LENGTH,
+                            trainable=False)
+
+# Build language model
+sequence_input = Input(shape=(MAX_SEQUENCE_LENGTH, ), dtype='int32')
+embedded_sequences = embedding_layer(sequence_input)
+x = LSTM(LSTM_SIZE, return_sequences=True)(embedded_sequences)
+preds_l = Dense(num_words + 1, activation=None)(x) # Generate logits only 
+    
 # Train model
 logger.info('Training model.'); print('Training model.')
 l_model = Model(sequence_input, preds_l)
-l_model.compile(loss='sparse_categorical_crossentropy',
-              optimizer='adam')
+l_model.compile(loss=lambda y_true, y_pred: tf.contrib.keras.backend.sparse_categorical_crossentropy(
+    output=y_pred, target=y_true, from_logits=True),
+    optimizer='adam')
 
 # Split training data into shards to get more frequent feedback
 examples_per_shard = int(x_train.shape[0] / (NB_SHARDS-1))
 
 for epoch in range(EPOCHS):
+    start_time = time.time()
     logger.info(' ')
     print('')
     logger.info("Grand epoch {}".format(epoch))
@@ -269,3 +279,7 @@ for epoch in range(EPOCHS):
         except:
             logger.info("Error generating sentence")
             print("Error generating sentence")
+    logger.info("Epoch Took {} seconds\n".format(time.time() - start_time))
+    print("Epoch Took {} seconds\n".format(time.time() - start_time))
+
+

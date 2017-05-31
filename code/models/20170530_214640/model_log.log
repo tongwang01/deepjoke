@@ -1,0 +1,13 @@
+INFO:deepjoke_lstm:VALIDATION_SPLIT = 0.2     MAX_SEQUENCE_LENGTH = 300     MAX_NB_WORDS = 20000     EMBEDDING_DIM = 100     LSTM_SIZE = 128     BATCH_SIZE = 32     EPOCHS = 5     MAX_NB_EXAMPLES = None     TRAIN_SCORE_THRESHOLD = 5     NB_SHARDS = 10
+INFO:deepjoke_lstm:Read in 194553 jokes.
+INFO:deepjoke_lstm:Read in 194553 scores.
+INFO:deepjoke_lstm:Found 56370 unique tokens.
+INFO:deepjoke_lstm:Shape of data tensor: (82914, 300)
+INFO:deepjoke_lstm:Shape of language model label tensor: (82914, 300, 1)
+INFO:deepjoke_lstm:Shape of scoring model label tensor: (82914,)
+INFO:deepjoke_lstm:Indexing word vectors.
+INFO:deepjoke_lstm:Training model.
+INFO:deepjoke_lstm: 
+INFO:deepjoke_lstm:Grand epoch 0
+INFO:deepjoke_lstm: 
+INFO:deepjoke_lstm:Training on shard 0/10

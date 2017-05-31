@@ -1,0 +1,19 @@
+INFO:deepjoke_lstm:VALIDATION_SPLIT = 0.2     MAX_SEQUENCE_LENGTH = 300     MAX_NB_WORDS = 20000     EMBEDDING_DIM = 100     LSTM_SIZE = 128     BATCH_SIZE = 32     EPOCHS = 5     MAX_NB_EXAMPLES = 2000     TRAIN_SCORE_THRESHOLD = 5     NB_SHARDS = 10
+INFO:deepjoke_lstm:Read in 194553 jokes.
+INFO:deepjoke_lstm:Read in 194553 scores.
+INFO:deepjoke_lstm:Found 9661 unique tokens.
+INFO:deepjoke_lstm:Shape of data tensor: (2000, 300)
+INFO:deepjoke_lstm:Shape of language model label tensor: (2000, 300, 1)
+INFO:deepjoke_lstm:Shape of scoring model label tensor: (2000,)
+INFO:deepjoke_lstm:Indexing word vectors.
+INFO:deepjoke_lstm:Training model.
+INFO:deepjoke_lstm: 
+INFO:deepjoke_lstm:Grand epoch 0
+INFO:deepjoke_lstm: 
+INFO:deepjoke_lstm:Training on shard 0/10
+INFO:deepjoke_lstm: 
+INFO:deepjoke_lstm:----- diversity: 0.2
+INFO:deepjoke_lstm:----- Generating with seed: "A man walks into a bar"
+INFO:deepjoke_lstm: 
+INFO:deepjoke_lstm:Error generating sentence
+INFO:deepjoke_lstm:Training on shard 1/10
