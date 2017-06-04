@@ -171,7 +171,7 @@ def sample(preds, temperature=1.0):
     probas = np.random.multinomial(1, preds, 1)
     return np.argmax(probas)
 
-def generate_sentence(model, starter_sentence=STARTER_SENTENCE,
+def generate_sentence(model, starter_sentence,
                       diversities=[0.2, 0.5, 1.0, 1.2, 2.0]):
     # function to generate sentences from trained lstm
     for diversity in diversities:
