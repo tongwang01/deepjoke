@@ -22,7 +22,7 @@ np.random.seed(123)
 BASE_DIR = os.getcwd()
 GLOVE_DIR = BASE_DIR.replace("/code", "/glove.6B/")
 TEXT_DATA_DIR = BASE_DIR.replace("/code", '/joke-dataset/')
-MODEL_DIR = BASE_DIR + "/models/{:%Y%m%d_%H%M%S}/".format(datetime.now()) 
+MODEL_DIR = BASE_DIR + "/models/lstm/{:%Y%m%d_%H%M%S}/".format(datetime.now()) 
 
 # Model params
 VALIDATION_SPLIT = 0.2
@@ -31,7 +31,7 @@ MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
-EPOCHS = 20
+EPOCHS = 30
 MAX_NB_EXAMPLES = None # Sample a fraction of examples to speed up training
 TRAIN_SCORE_THRESHOLD = 5
 NB_SHARDS = 10
@@ -39,11 +39,10 @@ NB_SHARDS = 10
 # Sampling params
 STARTER_SENTENCE = "A man walks into a bar"
 
-# Make model dir if needed
 try:
-    os.mkdir(MODEL_DIR)
+    os.makedirs(MODEL_DIR)
 except:
-    logger.info("Did not make model dir")
+    print("Did not make model dir")
 
 # Logging
 logger = logging.getLogger("deepjoke_lstm")
@@ -268,12 +267,14 @@ for epoch in range(EPOCHS):
             y_train_l_now = y_train_l[shard * examples_per_shard: ]
             y_train_s_now = y_train_s[shard * examples_per_shard: ]
 
-        l_model.fit(x_train_now, y_train_l_now,
+        hist = l_model.fit(x_train_now, y_train_l_now,
             batch_size=BATCH_SIZE,
             sample_weight = sample_weight_func(y_train_s_now),
             epochs=1,
             validation_data=(x_val, y_val_l))
         l_model.save(MODEL_DIR + "checkpoint_epoch_{}_shard_{}".format(epoch, shard))
+        logger.info(hist.history)
+        print(hist.history)
         try:
             generate_sentence(l_model)
         except:
