@@ -37,7 +37,10 @@ TRAIN_SCORE_THRESHOLD = 5
 NB_SHARDS = 10
 
 # Sampling params
-STARTER_SENTENCE = "A man walks into a bar"
+STARTER_SENTENCES = [
+    "a man walks into a bar", 
+    "my girlfriend told me to take the spider out instead of killing it",
+    "a lot of women turn into great drivers"]
 
 try:
     os.makedirs(MODEL_DIR)
@@ -169,9 +172,9 @@ def sample(preds, temperature=1.0):
     return np.argmax(probas)
 
 def generate_sentence(model, starter_sentence=STARTER_SENTENCE,
-                      diversities=[0.2, 0.5, 1.0, 1.2]):
+                      diversities=[0.2, 0.5, 1.0, 1.2, 2.0]):
     # function to generate sentences from trained lstm
-    for diversity in [0.2, 0.5, 1.0, 1.2]:
+    for diversity in diversities:
         cur_sentence = [starter_sentence]
         cur_sequence = tokenizer.texts_to_sequences(cur_sentence)
         cur_sequence = pad_sequences(cur_sequence, maxlen=MAX_SEQUENCE_LENGTH,
@@ -276,7 +279,8 @@ for epoch in range(EPOCHS):
         logger.info(hist.history)
         print(hist.history)
         try:
-            generate_sentence(l_model)
+            for starter_sentence in STARTER_SENTENCES:
+                generate_sentence(l_model, starter_sentence=starter_sentence)
         except:
             logger.info("Error generating sentence")
             print("Error generating sentence")
