@@ -23,7 +23,7 @@ BASE_DIR = os.getcwd()
 GLOVE_DIR = BASE_DIR.replace("/code", "/glove.6B/")
 TEXT_DATA_DIR = BASE_DIR.replace("/code", '/joke-dataset/')
 MODEL_DIR = BASE_DIR + "/models/lstm/{:%Y%m%d_%H%M%S}/".format(datetime.now())
-LOAD_MODEL_DIR = "/home/tongwang01/deepjoke/code/models/lstm/20170604_072651/checkpoint_epoch_8_shard_6" 
+LOAD_MODEL_DIR = None 
 
 # Model params
 VALIDATION_SPLIT = 0.2
