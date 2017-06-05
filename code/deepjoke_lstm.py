@@ -275,9 +275,9 @@ for epoch in range(EPOCHS):
             y_train_l_now = y_train_l[shard * examples_per_shard: (shard + 1) * examples_per_shard]
             y_train_s_now = y_train_s[shard * examples_per_shard: (shard + 1) * examples_per_shard]
         else:
-            x_train_now = x_train[shard * examples_per_shard: ]
-            y_train_l_now = y_train_l[shard * examples_per_shard: ]
-            y_train_s_now = y_train_s[shard * examples_per_shard: ]
+            x_train_now = x_train[(shard - 1) * examples_per_shard: ]
+            y_train_l_now = y_train_l[(shard - 1) * examples_per_shard: ]
+            y_train_s_now = y_train_s[(shard - 1) * examples_per_shard: ]
 
         hist = l_model.fit(x_train_now, y_train_l_now,
             batch_size=BATCH_SIZE,
