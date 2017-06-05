@@ -32,10 +32,10 @@ MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
-EPOCHS = 20
+EPOCHS = 30
 MAX_NB_EXAMPLES = None # Sample a fraction of examples to speed up training
 TRAIN_SCORE_THRESHOLD = 5
-NB_SHARDS = 10
+NB_SHARDS = 3
 
 # Sampling params
 STARTER_SENTENCES = [
