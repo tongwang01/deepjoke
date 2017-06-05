@@ -242,14 +242,17 @@ x = LSTM(LSTM_SIZE, return_sequences=True)(embedded_sequences)
 preds_l = Dense(num_words + 1, activation=None)(x) # Generate logits only 
     
 # Build new model or load existing model
+def tf_sparse_categorical_crossentropy(y_true, y_pred):
+    return tf.contrib.keras.backend.sparse_categorical_crossentropy(
+        output=y_pred, target=y_true, from_logits=True)
+
 logger.info('Training model.'); print('Training model.')
 if LOAD_MODEL_DIR is None:
     l_model = Model(sequence_input, preds_l)
-    l_model.compile(loss=lambda y_true, y_pred: tf.contrib.keras.backend.sparse_categorical_crossentropy(
-        output=y_pred, target=y_true, from_logits=True),
-    optimizer='adam')
+    l_model.compile(loss=tf_sparse_categorical_crossentropy, optimizer='adam')
 else:
-    l_model = load_model(LOAD_MODEL_DIR)
+    l_model = load_model(LOAD_MODEL_DIR, 
+        custom_objects={'tf_sparse_categorical_crossentropy': tf_sparse_categorical_crossentropy})
     logger.info("Loaded model from {}".format(LOAD_MODEL_DIR))
     print("Loaded model from {}".format(LOAD_MODEL_DIR))
 
