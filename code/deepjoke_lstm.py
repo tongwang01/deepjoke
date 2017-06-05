@@ -13,7 +13,7 @@ from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
 from keras.layers import Dense, LSTM, Flatten, Embedding, Input
-from keras.models import Model
+from keras.models import Model, load_model
 from unidecode import unidecode
 
 np.random.seed(123)
@@ -22,7 +22,8 @@ np.random.seed(123)
 BASE_DIR = os.getcwd()
 GLOVE_DIR = BASE_DIR.replace("/code", "/glove.6B/")
 TEXT_DATA_DIR = BASE_DIR.replace("/code", '/joke-dataset/')
-MODEL_DIR = BASE_DIR + "/models/lstm/{:%Y%m%d_%H%M%S}/".format(datetime.now()) 
+MODEL_DIR = BASE_DIR + "/models/lstm/{:%Y%m%d_%H%M%S}/".format(datetime.now())
+LOAD_MODEL_DIR = "/home/tongwang01/deepjoke/code/models/lstm/20170604_072651/checkpoint_epoch_8_shard_6" 
 
 # Model params
 VALIDATION_SPLIT = 0.2
@@ -31,7 +32,7 @@ MAX_NB_WORDS = 20000
 EMBEDDING_DIM = 100
 LSTM_SIZE = 128
 BATCH_SIZE = 32
-EPOCHS = 30
+EPOCHS = 20
 MAX_NB_EXAMPLES = None # Sample a fraction of examples to speed up training
 TRAIN_SCORE_THRESHOLD = 5
 NB_SHARDS = 10
@@ -240,12 +241,17 @@ embedded_sequences = embedding_layer(sequence_input)
 x = LSTM(LSTM_SIZE, return_sequences=True)(embedded_sequences)
 preds_l = Dense(num_words + 1, activation=None)(x) # Generate logits only 
     
-# Train model
+# Build new model or load existing model
 logger.info('Training model.'); print('Training model.')
-l_model = Model(sequence_input, preds_l)
-l_model.compile(loss=lambda y_true, y_pred: tf.contrib.keras.backend.sparse_categorical_crossentropy(
-    output=y_pred, target=y_true, from_logits=True),
+if LOAD_MODEL_DIR is None:
+    l_model = Model(sequence_input, preds_l)
+    l_model.compile(loss=lambda y_true, y_pred: tf.contrib.keras.backend.sparse_categorical_crossentropy(
+        output=y_pred, target=y_true, from_logits=True),
     optimizer='adam')
+else:
+    l_model = load_model(LOAD_MODEL_DIR)
+    logger.info("Loaded model from {}".format(LOAD_MODEL_DIR))
+    print("Loaded model from {}".format(LOAD_MODEL_DIR))
 
 # Split training data into shards to get more frequent feedback
 examples_per_shard = int(x_train.shape[0] / (NB_SHARDS-1))
@@ -275,7 +281,7 @@ for epoch in range(EPOCHS):
             sample_weight = sample_weight_func(y_train_s_now),
             epochs=1,
             validation_data=(x_val, y_val_l))
-        l_model.save(MODEL_DIR + "checkpoint_epoch_{}_shard_{}".format(epoch, shard))
+        l_model.save(MODEL_DIR + "checkpoint_latest")
         logger.info(hist.history)
         print(hist.history)
         try:
