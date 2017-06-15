@@ -24,13 +24,13 @@ def train():
     model_config = ModelConfig(input_path=text_data_dir,
                            embedding_path=embedding_path,
                            model_dir=model_dir,
-                           lstm_size_encoder=64,
-                           lstm_size_decoder=64,
-                           intermediate_size=32,
-                           latent_size=16,
-                           max_nb_examples=5000,
-                           min_score=5,
-                           epochs=1,
+                           lstm_size_encoder=256,
+                           lstm_size_decoder=256,
+                           intermediate_size=128,
+                           latent_size=64,
+                           max_nb_examples=None,
+                           min_score=0,
+                           epochs=10,
                            batch_size=32)
 
     # Set up logging
