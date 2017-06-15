@@ -30,7 +30,7 @@ def train():
                            latent_size=64,
                            max_nb_examples=None,
                            min_score=0,
-                           epochs=10,
+                           epochs=5,
                            batch_size=32)
 
     # Set up logging
