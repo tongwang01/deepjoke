@@ -8,7 +8,7 @@ import logging
 import numpy as np
 
 from data_generator import DataGenerator
-from lstm_cvae_model import ModelConfig, UncondDecodeLstmCvae
+from lstm_cvae_model import ModelConfig, UncondDecodeLstmCvae, CondDecodeLstmCvae
 
 np.random.seed(123)
 
@@ -28,10 +28,11 @@ def train():
                            lstm_size_decoder=256,
                            intermediate_size=128,
                            latent_size=64,
-                           max_nb_examples=2000,
+                           max_nb_examples=None,
                            min_score=0,
-                           epochs=2,
-                           kl_weight=50,
+                           kl_weight=100,
+                           score_transform="log",
+                           epochs=5,
                            batch_size=32)
 
     # Set up logging
@@ -54,10 +55,17 @@ def train():
         validation_split=model_config.validation_split)
     x_train, y_l_train, y_s_train, x_val, y_l_val, y_s_val, tokenizer, _ = data_generator.generate()
 
+    def log_transform(x):
+        return np.log(x + np.e)
+
+    if model_config.score_transform == "log":
+        y_s_train = log_transform(y_s_train)
+        y_s_val = log_transform(y_s_val)
+
     # Build and fit model
-    cvae = UncondDecodeLstmCvae(model_config, tokenizer)
+    cvae = CondDecodeLstmCvae(model_config, tokenizer)
     cvae.build()
-    hist = cvae.fit(x_train, y_s_train, x_val, y_s_val)
+    hist = cvae.fit(x_train, y_s_train, y_l_train, x_val, y_s_val, y_l_val)
     logger.info(hist.history)
     print("Done.")
 
