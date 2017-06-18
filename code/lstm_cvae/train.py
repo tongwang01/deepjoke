@@ -31,6 +31,7 @@ def train():
                            max_nb_examples=2000,
                            min_score=0,
                            epochs=2,
+                           kl_weight=50,
                            batch_size=32)
 
     # Set up logging
