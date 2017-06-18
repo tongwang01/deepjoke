@@ -156,6 +156,6 @@ class DataGenerator(object):
         print('Shape of validation features: {}'.format(x_val.shape))
         print('Shape of validation language model labels: {}'.format(y_l_val.shape))
         print('Shape of validation score labels: {}'.format(y_s_val.shape))        
-        return x_train, y_l_train, y_s_train, x_val, y_l_val, y_s_val, tokenizer 
+        return x_train, y_l_train, y_s_train, x_val, y_l_val, y_s_val, tokenizer, texts
 
                  

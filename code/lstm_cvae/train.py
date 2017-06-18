@@ -28,9 +28,9 @@ def train():
                            lstm_size_decoder=256,
                            intermediate_size=128,
                            latent_size=64,
-                           max_nb_examples=None,
+                           max_nb_examples=2000,
                            min_score=0,
-                           epochs=5,
+                           epochs=2,
                            batch_size=32)
 
     # Set up logging
@@ -51,7 +51,7 @@ def train():
         max_nb_examples=model_config.max_nb_examples,
         max_sequence_length=model_config.max_sequence_length,
         validation_split=model_config.validation_split)
-    x_train, y_l_train, y_s_train, x_val, y_l_val, y_s_val, tokenizer = data_generator.generate()
+    x_train, y_l_train, y_s_train, x_val, y_l_val, y_s_val, tokenizer, _ = data_generator.generate()
 
     # Build and fit model
     cvae = UncondDecodeLstmCvae(model_config, tokenizer)

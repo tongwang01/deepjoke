@@ -1,5 +1,6 @@
 #TODO
 #-Split the KL loss term and Recon loss term
+#-Pickle model_config intead of json it
 
 from __future__ import print_function
 import os
@@ -62,8 +63,8 @@ class UncondDecodeLstmCvae(object):
     """
     def __init__(self, model_config, tokenizer):
         self.config = model_config
-        self.config.word_index = tokenizer.word_index
-        self.config.num_words = min(model_config.max_nb_words, 
+        self.word_index = tokenizer.word_index
+        self.num_words = min(model_config.max_nb_words, 
                                     len(tokenizer.word_index))
         self.tokenizer = tokenizer
 
@@ -77,8 +78,8 @@ class UncondDecodeLstmCvae(object):
             coefs = np.asarray(values[1:], dtype='float32')
             embeddings_index[word] = coefs
         f.close()
-        embedding_matrix = np.zeros((self.config.num_words + 1, self.config.embedding_dim))
-        for word, i in self.config.word_index.items():
+        embedding_matrix = np.zeros((self.num_words + 1, self.config.embedding_dim))
+        for word, i in self.word_index.items():
             if i >= self.config.max_nb_words:
                 continue
             embedding_vector = embeddings_index.get(word)
@@ -91,7 +92,7 @@ class UncondDecodeLstmCvae(object):
         """Construct lstm cvae model"""
         # Load embedding in Embedding layer
         embedding_matrix = self.load_embedding()
-        embedding_layer = Embedding(self.config.num_words + 1,
+        embedding_layer = Embedding(self.num_words + 1,
                                     self.config.embedding_dim,
                                     weights=[embedding_matrix],
                                     input_length=self.config.max_sequence_length,
@@ -122,7 +123,7 @@ class UncondDecodeLstmCvae(object):
         z_repeated = RepeatVector(self.config.max_sequence_length)(z_cond)
         
         decoder_h = LSTM(self.config.lstm_size_decoder, return_sequences=True)
-        decoder_out = Dense(self.config.num_words + 1)
+        decoder_out = Dense(self.num_words + 1)
         
         h_decoded = decoder_h(z_repeated)
         x_decoded = decoder_out(h_decoded)
@@ -139,17 +140,26 @@ class UncondDecodeLstmCvae(object):
         generator_x_decoded = decoder_out(generator_h_decoded)
         generator = Model([generator_z_inputs, score_inputs], generator_x_decoded)
 
+        kl_weight = self.config.kl_weight
+        def recon_loss(y_true, y_pred):
+            """E[log P(X|z,y)]"""
+            recon = K.mean(K.sparse_categorical_crossentropy(
+                output=y_pred, target=y_true, from_logits=True), axis=1)
+            return recon
+
+        def kl_loss(y_true, y_pred):
+            """D_KL(Q(z|X,y) || P(z|X)); calculate in closed form as both dist. are Gaussian"""
+            kl = 0.5 * K.mean(K.exp(z_log_sigma) + K.square(z_mean) - 1. - z_log_sigma, axis=1)
+            kl = kl * kl_weight            
+            return kl
 
         def vae_loss(y_true, y_pred):
             """ Calculate loss = reconstruction loss + KL loss for each data in minibatch """
-            # E[log P(X|z,y)]
-            recon = K.sum(K.sparse_categorical_crossentropy(
-                output=y_pred, target=y_true, from_logits=True), axis=1)
-            # D_KL(Q(z|X,y) || P(z|X)); calculate in closed form as both dist. are Gaussian
-            kl = 0.5 * K.sum(K.exp(z_log_sigma) + K.square(z_mean) - 1. - z_log_sigma, axis=1)
+            recon = recon_loss(y_true, y_pred)
+            kl = kl_loss(y_true, y_pred)
             return recon + kl
         
-        vae.compile(loss=vae_loss, optimizer=self.config.optimizer)
+        vae.compile(loss=vae_loss, optimizer=self.config.optimizer, metrics=[recon_loss, kl_loss])
         
         self.vae = vae
         self.encoder = encoder
@@ -186,7 +196,7 @@ class UncondDecodeLstmCvae(object):
 
         self.encoder.save(self.config.model_dir + "/encoder_checkpoint")
         self.generator.save(self.config.model_dir + "/generator_checkpoint")
-        json.dump(self.config.__dict__, open(self.config.model_dir + "/model_config.json", "wb" ))
+        pickle.dump(self.config, open(self.config.model_dir + "/model_config.p", "wb" ))
         pickle.dump(self.tokenizer, open(self.config.model_dir + "/tokenizer.p", "wb" ))
         return hist
 
