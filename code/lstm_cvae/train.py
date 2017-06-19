@@ -28,7 +28,7 @@ def train():
                            lstm_size_decoder=256,
                            intermediate_size=128,
                            latent_size=64,
-                           max_nb_examples=None,
+                           max_nb_examples=500,
                            min_score=0,
                            kl_weight=100,
                            score_transform="log",
