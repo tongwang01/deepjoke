@@ -18,8 +18,8 @@ from lstm_cvae_model import ModelConfig
 def get_sample_config():
     sample_config = {
         "model_dir": "/Users/tongwang/Playground/deepjoke/code/model_checkpoints/lstm_cvae/20170618_072219",
-        "starter_sentences": ["a sexy", "what", "why", "what's the best thing about living in switzerland", "once upon a time", "trump"],
-        "temperatures": [None, 0.2, 0.5, 1.0],
+        "starter_sentences": ["what's the best thing about living in switzerland", "once upon a time", "why", "trump"],
+        "temperatures": [None, 0.2],
         "scores": [1, 5, 10, 20],
         "variations": [1., 2., 5.]
         }
