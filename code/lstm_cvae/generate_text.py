@@ -18,7 +18,7 @@ from lstm_cvae_model import ModelConfig
 def get_sample_config():
     sample_config = {
         "model_dir": "/Users/tongwang/Playground/deepjoke/code/model_checkpoints/lstm_cvae/20170618_072219",
-        "starter_sentences": ["what's the best thing about living in switzerland", "once upon a time", "why", "trump"],
+        "starter_sentences": ["once upon a time", "why", "trump"],
         "temperatures": [None, 0.2],
         "scores": [1, 5, 10, 20],
         "variations": [1., 2., 5.]
@@ -52,8 +52,8 @@ def tokens_to_words(tokens, tokenizer, eos=""):
     text = " ".join(words)
     return text
 
-def generate_text(target_score, generator, model_config, tokenizer,
-                  starter_sentence="", temperature=None, variation=1., eos=""):
+def generate_text(generator, target_score, model_config, tokenizer, 
+    encoder=None, source_text=None, source_score=None, starter_sentence="", temperature=None, variation=1., eos=""):
     """Function to generate paragraphs given a target score, a random latent vector,
     and (optionally) a starter sentence.
     
@@ -67,7 +67,16 @@ def generate_text(target_score, generator, model_config, tokenizer,
         -model_config.batch_size many pieces of text
     """
     # Prepare inputs
-    z = np.random.normal(scale=variation, size=(model_config.batch_size, model_config.latent_size))
+    if encoder is None:
+        z = np.random.normal(scale=variation, size=(model_config.batch_size, model_config.latent_size))
+    else:
+        source_sequence = tokenizer.texts_to_sequences([source_text])
+        source_sequence = pad_sequences(source_sequence, maxlen=model_config.max_sequence_length,
+            padding='post', truncating='post')
+        source_sequence = np.repeat(source_sequence, model_config.batch_size, axis=0)
+        source_score = np.repeat(source_score, model_config.batch_size)
+        z = encoder.predict([source_sequence, source_score])
+        
     scores = np.repeat(target_score, model_config.batch_size)
     cur_sentence = [starter_sentence]
     cur_sequence = tokenizer.texts_to_sequences(cur_sentence)

@@ -1,1 +1,4 @@
 /glove.6B/*
+/data/*
+*.pyc
+data_generated.p

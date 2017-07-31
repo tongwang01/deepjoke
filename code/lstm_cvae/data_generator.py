@@ -1,13 +1,14 @@
 from __future__ import print_function
-from unidecode import unidecode
 
 import numpy as np
 import pandas as pd
 
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
+from unidecode import unidecode
 
 np.random.seed(123)
+
 
 class DataGenerator(object):
     """Class to generate data for deepjoke models

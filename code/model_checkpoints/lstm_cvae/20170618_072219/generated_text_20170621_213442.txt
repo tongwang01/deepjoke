@@ -1,0 +1,161 @@
+starter_sentence|score|variation|temperature|iter|text
+what's the best thing about living in switzerland|1|1.0|None|0|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|1|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|None|2|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|3|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|1.0|None|4|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|5|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|6|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|None|7|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|8|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|None|9|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|10|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|11|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|12|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|13|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|14|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|15|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|16|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|None|17|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|None|18|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|None|19|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|None|20|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|21|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|22|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|23|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|24|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|25|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|1.0|None|26|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|None|27|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|1.0|None|28|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|1.0|None|29|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|None|30|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|None|31|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|None|0|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|None|1|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|None|2|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|3|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|2.0|None|4|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|5|what's the best thing about living in switzerland ? a little bit of shit .
+what's the best thing about living in switzerland|1|2.0|None|6|what's the best thing about living in switzerland ? a woman .
+what's the best thing about living in switzerland|1|2.0|None|7|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|None|8|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|None|9|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|10|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|11|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|None|12|what's the best thing about living in switzerland ? a lot of people are in the same
+what's the best thing about living in switzerland|1|2.0|None|13|what's the best thing about living in switzerland ? a lot of people are in the same .
+what's the best thing about living in switzerland|1|2.0|None|14|what's the best thing about living in switzerland ? the woman who is the most of the time ?
+what's the best thing about living in switzerland|1|2.0|None|15|what's the best thing about living in switzerland ? a .
+what's the best thing about living in switzerland|1|2.0|None|16|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|17|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|18|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|None|19|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|20|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|21|what's the best thing about living in switzerland ? because they are both .
+what's the best thing about living in switzerland|1|2.0|None|22|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|None|23|what's the best thing about living in switzerland ? the man .
+what's the best thing about living in switzerland|1|2.0|None|24|what's the best thing about living in switzerland ? the man .
+what's the best thing about living in switzerland|1|2.0|None|25|what's the best thing about living in switzerland ? a small medium .
+what's the best thing about living in switzerland|1|2.0|None|26|what's the best thing about living in switzerland ? a woman .
+what's the best thing about living in switzerland|1|2.0|None|27|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|28|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|29|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|2.0|None|30|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|None|31|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|5.0|None|0|what's the best thing about living in switzerland ? the old man . the man says , i have a large penis , etc .
+what's the best thing about living in switzerland|1|5.0|None|1|what's the best thing about living in switzerland ? he is a
+what's the best thing about living in switzerland|1|5.0|None|2|what's the best thing about living in switzerland .
+what's the best thing about living in switzerland|1|5.0|None|3|what's the best thing about living in switzerland in a year ? one is a girl .
+what's the best thing about living in switzerland|1|5.0|None|4|what's the best thing about living in switzerland ? i don't like a a woman in my face . i am not ?
+what's the best thing about living in switzerland|1|5.0|None|5|what's the best thing about living in switzerland . the world was the same of the jungle , but the germans kidding .
+what's the best thing about living in switzerland|1|5.0|None|6|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|5.0|None|7|what's the best thing about living in switzerland ? are you kidding grant you are , you need to be honest , you haven't , you must be able to be a headache , and you are not shouldn't , and the first will be the first , you will hardly ashamed , you will be a headache , , you will hardly ashamed , you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a headache , and you will be a
+what's the best thing about living in switzerland|1|5.0|None|8|what's the best thing about living in switzerland ? the first .
+what's the best thing about living in switzerland|1|5.0|None|9|what's the best thing about living in switzerland in a man and a woman is in a bar and the other is to be in the room . the man says , and the man says , i have to do , i have to do . i have to do . i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to say , i have to
+what's the best thing about living in switzerland|1|5.0|None|10|what's the best thing about living in switzerland ? the first .
+what's the best thing about living in switzerland|1|5.0|None|11|what's the best thing about living in switzerland ? pearly
+what's the best thing about living in switzerland|1|5.0|None|12|what's the best thing about living in switzerland ? the woman asked her to put her hand on the table .
+what's the best thing about living in switzerland|1|5.0|None|13|what's the best thing about living in switzerland ? because he is not racist .
+what's the best thing about living in switzerland|1|5.0|None|14|what's the best thing about living in switzerland . the first of the worker asks the man if you can a duck and a dick is pointing up the dog . the next day the farmer walks up to the side and the a table . the next , the farmer astonished , the farmer astonished , but he is a little boy . the next day the farmer astonished about the 000 00 . the next day the farmer astonished , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 , 000 ,
+what's the best thing about living in switzerland|1|5.0|None|15|what's the best thing about living in switzerland ?
+what's the best thing about living in switzerland|1|5.0|None|16|what's the best thing about living in switzerland ? a bit
+what's the best thing about living in switzerland|1|5.0|None|17|what's the best thing about living in switzerland ? a .
+what's the best thing about living in switzerland|1|5.0|None|18|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|5.0|None|19|what's the best thing about living in switzerland ? a .
+what's the best thing about living in switzerland|1|5.0|None|20|what's the best thing about living in switzerland ? a girl .
+what's the best thing about living in switzerland|1|5.0|None|21|what's the best thing about living in switzerland ? the man who proceeds to 00 minute later .
+what's the best thing about living in switzerland|1|5.0|None|22|what's the best thing about living in switzerland ? a man with a woman in a field .
+what's the best thing about living in switzerland|1|5.0|None|23|what's the best thing about living in switzerland ? a little pleased , the guy who has it it in the other to the other other other to floor , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen , kitchen ,
+what's the best thing about living in switzerland|1|5.0|None|24|what's the best thing about living in switzerland ? the
+what's the best thing about living in switzerland|1|5.0|None|25|what's the best thing about living in switzerland ? crime .
+what's the best thing about living in switzerland|1|5.0|None|26|what's the best thing about living in switzerland ? asks the englishman , and says , i guess you are so forth to you ? the farmer replies , i can't the hardest of the least of the 000 , 000 , to which the farmer replies , i guess you are so far , we don't you , i captured you . the farmer , and i am a question you tell me , i can't you , but there's a good idea , but i can't have a good idea of this . the farmer says to the farmer , i captured you , i captured the hardest to the other side . the farmer says , i guess you are so many of us , you are you . the farmer says , i guess you are so much ago , i can't have a good idea of course . the farmer says , i guess you have to go to heaven . the day , the farmer says , i guess you are so many of us , you are all insulted me , i captured you , but we are all luckily you . the farmer says , i guess you are so much disgust . the man is that impressed , but eventually the two of the three , he says disbelief , i guess you are so much disgust . the man is that impressed , but eventually the man to the top of the least of the three and the three men and the three men and the three men and the three men and the three men and the three men and the three men and the three men and the three men and the three men and the three men
+what's the best thing about living in switzerland|1|5.0|None|27|what's the best thing about living in switzerland ? pearly .
+what's the best thing about living in switzerland|1|5.0|None|28|what's the best thing about living in switzerland ? a wheelchair .
+what's the best thing about living in switzerland|1|5.0|None|29|what's the best thing about living in switzerland ? the man replied the man , i just at him , and said , no , i just can't just a man , and said , no , i just ? the man replied , i just , i just the right in the window and said , no , i just can't just a man , and said , i just to the other side said the man . i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him , and said , i just at him .
+what's the best thing about living in switzerland|1|5.0|None|30|what's the best thing about living in switzerland ? the first .
+what's the best thing about living in switzerland|1|5.0|None|31|what's the best thing about living in switzerland . the man says , what do you do ? the germans man says , i don't have to me , i just the man says , i don't have to me . the man says , i don't have to me , the feminists , and the man says , i don't have to me to my wife and says , i don't have to me to my wife and says , i don't have to me to my wife and says , i don't have to my wife and the man says , i don't have to go to the back of my wife and says , i don't have to me to my wife and says , i don't have to me to my wife and says , i don't have to my wife and the man says , i don't have to go to the back of my wife and says , i don't have to me to my wife and says , i don't have to my wife and the man says , i don't have to go to the back of my wife and says , i don't have to my wife and the man says , i don't have to go to the back of my wife and says , i don't have to me to my wife and says , i don't have to me to my wife and says , i don't have to my wife and the man says , i don't have to go to the back of my wife and says , i don't have to my wife and the man says , i don't have to go to the back of my wife and says , i don't have
+what's the best thing about living in switzerland|1|1.0|0.2|0|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|1|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|2|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|3|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|4|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|0.2|5|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|0.2|6|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|1.0|0.2|7|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|8|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|9|what's the best thing about living in switzerland ? a .
+what's the best thing about living in switzerland|1|1.0|0.2|10|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|11|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|0.2|12|what's the best thing about living in switzerland ? a lot of people are in the woods .
+what's the best thing about living in switzerland|1|1.0|0.2|13|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|14|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|15|what's the best thing about living in switzerland ? a small medium .
+what's the best thing about living in switzerland|1|1.0|0.2|16|what's the best thing about living in switzerland ? a little boy .
+what's the best thing about living in switzerland|1|1.0|0.2|17|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|1.0|0.2|18|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|19|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|20|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|21|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|1.0|0.2|22|what's the best thing about living in switzerland ? a .
+what's the best thing about living in switzerland|1|1.0|0.2|23|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|1.0|0.2|24|what's the best thing about living in switzerland ? a woman .
+what's the best thing about living in switzerland|1|1.0|0.2|25|what's the best thing about living in switzerland ? a lot of people are in the world .
+what's the best thing about living in switzerland|1|1.0|0.2|26|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|27|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|1.0|0.2|28|what's the best thing about living in switzerland ? a man
+what's the best thing about living in switzerland|1|1.0|0.2|29|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|30|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|1.0|0.2|31|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|0.2|0|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|0.2|1|what's the best thing about living in switzerland ? a little boy .
+what's the best thing about living in switzerland|1|2.0|0.2|2|what's the best thing about living in switzerland ? a little more .
+what's the best thing about living in switzerland|1|2.0|0.2|3|what's the best thing about living in switzerland ? the only thing you can get a dick .
+what's the best thing about living in switzerland|1|2.0|0.2|4|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|0.2|5|what's the best thing about living in switzerland ? a man is in the back of the room .
+what's the best thing about living in switzerland|1|2.0|0.2|6|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|0.2|7|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|0.2|8|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|0.2|9|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|0.2|10|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|0.2|11|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|2.0|0.2|12|what's the best thing about living in switzerland ? the man is a little boy .
+what's the best thing about living in switzerland|1|2.0|0.2|13|what's the best thing about living in switzerland ? the man .
+what's the best thing about living in switzerland|1|2.0|0.2|14|what's the best thing about living in switzerland ? the way to the other side
+what's the best thing about living in switzerland|1|2.0|0.2|15|what's the best thing about living in switzerland ? a little boy .
+what's the best thing about living in switzerland|1|2.0|0.2|16|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|0.2|17|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|0.2|18|what's the best thing about living in switzerland ? a
+what's the best thing about living in switzerland|1|2.0|0.2|19|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|0.2|20|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|0.2|21|what's the best thing about living in switzerland ? a woman .
+what's the best thing about living in switzerland|1|2.0|0.2|22|what's the best thing about living in switzerland ? a lot of people in the world .
+what's the best thing about living in switzerland|1|2.0|0.2|23|what's the best thing about living in switzerland ? a little bit of a bit .
+what's the best thing about living in switzerland|1|2.0|0.2|24|what's the best thing about living in switzerland ? a lot of people .
+what's the best thing about living in switzerland|1|2.0|0.2|25|what's the best thing about living in switzerland ? a little bit .
+what's the best thing about living in switzerland|1|2.0|0.2|26|what's the best thing about living in switzerland ? a man .
+what's the best thing about living in switzerland|1|2.0|0.2|27|what's the best thing about living in switzerland ? a man
+what's the best thing about living in switzerland|1|2.0|0.2|28|what's the best thing about living in switzerland ? a man is in the hospital .
+what's the best thing about living in switzerland|1|2.0|0.2|29|what's the best thing about living in switzerland ? the man who is not to hear a joke ?
+what's the best thing about living in switzerland|1|2.0|0.2|30|what's the best thing about living in switzerland ? a lot of people are in the world .
+what's the best thing about living in switzerland|1|2.0|0.2|31|what's the best thing about living in switzerland ? a little bit .
