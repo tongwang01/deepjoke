@@ -155,8 +155,8 @@ class ContraVAE(object):
                               output_length=self.config.max_sequence_length)
     rnn.add(LSTMCell(self.config.decoder_lstm_dims[0],
                      input_dim=self.config.latent_dim+1))
-    #for dim in self.config.decoder_lstm_dims[1:]:
-    #  rnn.add(LSTMCell(dim))
+    for dim in self.config.decoder_lstm_dims[1:]:
+      rnn.add(LSTMCell(dim))
     decoder_out = TimeDistributed(Dense(self.num_words + 1))
 
     # Decoder output
