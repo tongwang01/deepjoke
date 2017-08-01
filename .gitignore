@@ -2,3 +2,4 @@
 /data/*
 *.pyc
 data_generated.p
+data_generated_small.p

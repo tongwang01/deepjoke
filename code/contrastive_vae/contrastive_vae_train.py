@@ -52,7 +52,7 @@ def train(generated_data_path=None, epochs=1, examples_cap=None):
       model_dir=model_dir,
       embedding_dim=200,
       batch_size=32,
-      max_nb_words=1e5,
+      max_nb_words=100000,
       max_nb_examples=None,
       max_sequence_length=200,
       encoder_lstm_dims = [256, 128],
@@ -98,6 +98,7 @@ def train(generated_data_path=None, epochs=1, examples_cap=None):
 
 if __name__ == "__main__":
   train(
-      generated_data_path="data_generated.p",
-      epochs=2,
-      examples_cap=1000)
+      # generated_data_path="data_generated_small.p",
+      generated_data_path=None,
+      epochs=5,
+      examples_cap=None)

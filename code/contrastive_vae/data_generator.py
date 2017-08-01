@@ -199,7 +199,7 @@ class DataGenerator(object):
     return x_train, s_train, x_val, s_val, tokenizer, texts, scores
 
 
-def run():
+def run(max_nb_examples, filename):
   """Construct a DataGenerator object and genrate data using default settings.
   """
   cur_path = os.getcwd()
@@ -211,12 +211,12 @@ def run():
       "/data/hacker-news-dataset/hacker_news_subset_10_to_200.csv")
   data_gen = DataGenerator(
       positive_data_path=short_jokes_path,
-      contrastive_data_path=hacker_news_path)
+      contrastive_data_path=hacker_news_path,
+      max_nb_examples=max_nb_examples)
   data_generated = data_gen.generate()
-  file_name = "data_generated.p"
-  pickle.dump(data_generated, open(file_name, "wb"))
-  logger.info("Generated data stored as {}".format(file_name))
+  pickle.dump(data_generated, open(filename, "wb"))
+  logger.info("Generated data stored as {}".format(filename))
 
 
 if __name__ == "__main__":
-  run()
+  run(max_nb_examples=5000, filename="data_generated_small.p")

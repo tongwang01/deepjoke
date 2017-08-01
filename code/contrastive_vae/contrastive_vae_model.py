@@ -11,17 +11,16 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import cPickle as pickle
 import logging
 import numpy as np
 import os
 
 from keras import backend as K
-from keras.layers import Dense, LSTM, Embedding, Input, RepeatVector, Lambda
+from keras.layers import Dense, LSTM, Embedding, Input, RepeatVector, Lambda, TimeDistributed
 from keras.models import Model
 from keras.layers.merge import concatenate
-
-# Set numpy seed
-np.random.seed(123)
+from recurrentshop import LSTMCell, RecurrentSequential
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -39,7 +38,7 @@ class ModelConfig():
                model_dir,
                embedding_dim=200,
                batch_size=32,
-               max_nb_words=1e5,
+               max_nb_words=100000,
                max_nb_examples=None,
                max_sequence_length=200,
                encoder_lstm_dims = [256, 128],
@@ -70,7 +69,7 @@ class ContraVAE(object):
   def __init__(self, model_config, tokenizer):
     self.config = model_config
     self.word_index = tokenizer.word_index
-    self.num_words = min(model_config.max_nb_words,
+    self.num_words = min(int(model_config.max_nb_words),
                          len(tokenizer.word_index))
     self.tokenizer = tokenizer
     self._make_model()
@@ -121,10 +120,15 @@ class ContraVAE(object):
     embedded_sequence_inputs = embedding_layer(sequence_inputs)
     # Merge with score inputs
     score_inputs = Input(batch_shape=(self.config.batch_size, 1))
-    last_layer = concatenate([embedded_sequence_inputs, score_inputs], axis=1)
+    score_inputs_repeated = RepeatVector(self.config.max_sequence_length)(
+        score_inputs)
+    last_layer = concatenate([embedded_sequence_inputs, score_inputs_repeated],
+                             axis=2)
     # LSTM layers
-    for dim in self.config.encoder_lstm_dims:
-      last_layer = LSTM(dim, return_sequences=False)(last_layer)
+    for dim in self.config.encoder_lstm_dims[:-1]:
+      last_layer = LSTM(dim, return_sequences=True)(last_layer)
+    last_layer = LSTM(self.config.encoder_lstm_dims[-1],
+                      return_sequences=False)(last_layer)
     # Mean and std of z
     z_mean = Dense(self.config.latent_dim)(last_layer)
     z_log_sigma = Dense(self.config.latent_dim)(last_layer)
@@ -144,33 +148,34 @@ class ContraVAE(object):
     score_inputs2 = Input(batch_shape=(self.config.batch_size, 1))
     z_c = concatenate([z, score_inputs2], axis=1)
     # Repeat z_c so every timestep has access to it
-    z_c_repeated = RepeatVector(self.config.max_sequence_length)(z_c)
+    #z_c_repeated = RepeatVector(self.config.max_sequence_length)(z_c)
 
     # P(X|z,c) -- decoder.
     rnn = RecurrentSequential(decode=True,
-                              output_length=self.config.max_sequence_length,
-                              teacher_forcing=True)
-    rnn.add(Input(
-        batch_shape=(self.config.batch_size, self.config.latent_dim+1)))
-    for dim in self.config.decoder_lstm_dims:
-      rnn.add(LSTMCell(dim))
-    rnn.add(Dense(self.num_words + 1))
+                              output_length=self.config.max_sequence_length)
+    rnn.add(LSTMCell(self.config.decoder_lstm_dims[0],
+                     input_dim=self.config.latent_dim+1))
+    #for dim in self.config.decoder_lstm_dims[1:]:
+    #  rnn.add(LSTMCell(dim))
+    decoder_out = TimeDistributed(Dense(self.num_words + 1))
 
     # Decoder output
-    x_decoded = rnn(h_decoded, ground_truth=sequence_inputs)
+    # x_decoded = rnn(z_c_repeated, ground_truth=sequence_inputs)
+    h_decoded = rnn(z_c)
+    x_decoded = decoder_out(h_decoded)
 
     # Construct models
     # VAE
-    vae = Model([sequence_inputs, score_inputs, score_inputs2], x_decoded)
+    vae = Model([sequence_inputs, score_inputs,
+                 score_inputs2], x_decoded)
     # Encoder
     encoder = Model([sequence_inputs, score_inputs], z_mean)
     # Generator
     generator_z_inputs = Input(
-        batch_shape=(self.config.batch_size, self.config.latent_size))
+        batch_shape=(self.config.batch_size, self.config.latent_dim))
     generator_z_c = concatenate([generator_z_inputs, score_inputs2], axis=1)
-    generator_z_c_repeated = RepeatVector(self.config.max_sequence_length)(
-        generator_z_c)
-    generator_x_decoded = rnn(generator_z_c_repeated)
+    generator_h_decoded = rnn(generator_z_c)
+    generator_x_decoded = decoder_out(generator_h_decoded)
     generator = Model([generator_z_inputs, score_inputs2], generator_x_decoded)
 
     # Define loss function
@@ -238,16 +243,18 @@ class ContraVAE(object):
         x_val.shape[0] / self.config.batch_size) * self.config.batch_size)
     x_train = x_train[0:train_cap, :]
     s_train = s_train[0:train_cap]
+    x_train_3d = x_train.reshape(x_train.shape[0], x_train.shape[1], 1)
     x_val = x_val[0:val_cap, :]
     s_val = s_val[0:val_cap]
+    x_val_3d = x_val.reshape(x_val.shape[0], x_val.shape[1], 1)
 
     # Train the vae model
     hist = self.vae.fit(
         x=[x_train, s_train, s_train],
-        y=x_train,
+        y=x_train_3d,
         batch_size=self.config.batch_size,
         epochs=epochs,
-        validation_data=([x_val, s_val, s_val], x_val))
+        validation_data=([x_val, s_val, s_val], x_val_3d))
 
     # Save outputs
     try:
