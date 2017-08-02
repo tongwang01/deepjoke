@@ -219,4 +219,4 @@ def run(max_nb_examples, filename):
 
 
 if __name__ == "__main__":
-  run(max_nb_examples=5000, filename="data_generated_small.p")
+  run(max_nb_examples=None, filename="data_generated.p")
