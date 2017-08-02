@@ -17,6 +17,7 @@ import numpy as np
 import os
 
 from keras import backend as K
+from keras import optimizers
 from keras.layers import Dense, LSTM, Embedding, Input, RepeatVector, Lambda, TimeDistributed
 from keras.models import Model
 from keras.layers.merge import concatenate
@@ -45,7 +46,7 @@ class ModelConfig():
                decoder_lstm_dims = [128, 256],
                latent_dim=64,
                kl_weight=1.,
-               optimizer="RMSprop"):
+               optimizer=optimizers.RMSprop(clipnorm=1.)):
     self.positive_data_path = positive_data_path
     self.contrastive_data_path = contrastive_data_path
     self.embedding_path = embedding_path
@@ -130,8 +131,8 @@ class ContraVAE(object):
     last_layer = LSTM(self.config.encoder_lstm_dims[-1],
                       return_sequences=False)(last_layer)
     # Mean and std of z
-    z_mean = Dense(self.config.latent_dim)(last_layer)
-    z_log_sigma = Dense(self.config.latent_dim)(last_layer)
+    z_mean = Dense(self.config.latent_dim, activation='tanh')(last_layer)
+    z_log_sigma = Dense(self.config.latent_dim, activation='tanh')(last_layer)
 
     # Sample z ~ Q(z|X,c)
     def sampling(args):
@@ -157,7 +158,7 @@ class ContraVAE(object):
                      input_dim=self.config.latent_dim+1))
     for dim in self.config.decoder_lstm_dims[1:]:
       rnn.add(LSTMCell(dim))
-    decoder_out = TimeDistributed(Dense(self.num_words + 1))
+    decoder_out = TimeDistributed(Dense(self.num_words + 1), activation='tanh')
 
     # Decoder output
     # x_decoded = rnn(z_c_repeated, ground_truth=sequence_inputs)

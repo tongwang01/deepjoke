@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d16ae5-cd79-40d5-a204-6f8d3da2f6e8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" afterPath="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py" afterPath="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,20 +17,18 @@
       <file leaf-file-name="data_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/contrastive_vae/data_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2955">
-              <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-              <folding>
-                <element signature="e#352#390#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-929">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contrastive_vae_model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contrastive_vae_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="240" column="32" lean-forward="false" selection-start-line="240" selection-start-column="32" selection-end-line="240" selection-end-column="32" />
+            <state relative-caret-position="-2804">
+              <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
               <folding>
                 <element signature="e#275#313#0" expanded="true" />
               </folding>
@@ -37,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contrastive_vae_train.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="contrastive_vae_train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="102" column="15" lean-forward="true" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
+            <state relative-caret-position="1365">
+              <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
               <folding>
                 <element signature="e#60#98#0" expanded="true" />
               </folding>
@@ -52,8 +51,8 @@
       <file leaf-file-name="lstm_cvae_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/lstm_cvae/lstm_cvae_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3479">
-              <caret line="133" column="35" lean-forward="false" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+            <state relative-caret-position="150">
+              <caret line="249" column="58" lean-forward="false" selection-start-line="249" selection-start-column="58" selection-end-line="249" selection-end-column="58" />
               <folding>
                 <element signature="e#92#129#0" expanded="true" />
               </folding>
@@ -82,6 +81,9 @@
       <find>self.config.latent_size</find>
       <find>reshape</find>
       <find>50</find>
+      <find>activation</find>
+      <find>dense</find>
+      <find>optimizer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,15 +94,15 @@
       <list>
         <option value="$PROJECT_DIR$/code/lstm_cvae/data_generator.py" />
         <option value="$PROJECT_DIR$/code/contrastive_vae/data_generator.py" />
-        <option value="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" />
         <option value="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py" />
+        <option value="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="188" />
-    <option name="y" value="23" />
-    <option name="width" value="1008" />
+    <option name="x" value="234" />
+    <option name="y" value="141" />
+    <option name="width" value="1136" />
     <option name="height" value="777" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -201,10 +203,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="188" y="23" width="1008" height="777" extended-state="0" />
+    <frame x="234" y="141" width="1136" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3472222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30809858" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -308,42 +310,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/data_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-929">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/code/lstm_cvae/lstm_cvae_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3479">
-          <caret line="133" column="35" lean-forward="false" selection-start-line="133" selection-start-column="35" selection-end-line="133" selection-end-column="35" />
+        <state relative-caret-position="150">
+          <caret line="249" column="58" lean-forward="false" selection-start-line="249" selection-start-column="58" selection-end-line="249" selection-end-column="58" />
           <folding>
             <element signature="e#92#129#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/data_generator.py">
+    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2955">
-          <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+        <state relative-caret-position="1365">
+          <caret line="91" column="18" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="91" selection-end-column="18" />
           <folding>
-            <element signature="e#352#390#0" expanded="true" />
+            <element signature="e#60#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="240" column="32" lean-forward="false" selection-start-line="240" selection-start-column="32" selection-end-line="240" selection-end-column="32" />
+        <state relative-caret-position="-2804">
+          <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding>
             <element signature="e#275#313#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="102" column="15" lean-forward="true" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
-          <folding>
-            <element signature="e#60#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
