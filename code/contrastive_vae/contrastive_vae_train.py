@@ -98,7 +98,7 @@ def train(generated_data_path=None, epochs=1, examples_cap=None):
 
 if __name__ == "__main__":
   train(
-      # generated_data_path="data_generated_small.p",
+      #generated_data_path="data_generated.p",
       generated_data_path=None,
-      epochs=2,
+      epochs=3,
       examples_cap=None)
