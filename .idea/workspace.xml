@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d16ae5-cd79-40d5-a204-6f8d3da2f6e8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/contrastive_vae/data_generator.py" afterPath="$PROJECT_DIR$/code/contrastive_vae/data_generator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" afterPath="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="data_generator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/code/contrastive_vae/data_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="219" column="0" lean-forward="true" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+            <state relative-caret-position="438">
+              <caret line="209" column="13" lean-forward="true" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
               <folding>
                 <element signature="e#352#390#0" expanded="true" />
               </folding>
@@ -25,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contrastive_vae_model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="contrastive_vae_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="260" column="8" lean-forward="true" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
+            <state relative-caret-position="140">
+              <caret line="138" column="32" lean-forward="true" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
               <folding>
                 <element signature="e#275#313#0" expanded="true" />
               </folding>
@@ -85,6 +85,7 @@
       <find>activation</find>
       <find>dense</find>
       <find>optimizer</find>
+      <find>activatio</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,8 +96,8 @@
       <list>
         <option value="$PROJECT_DIR$/code/lstm_cvae/data_generator.py" />
         <option value="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_train.py" />
-        <option value="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" />
         <option value="$PROJECT_DIR$/code/contrastive_vae/data_generator.py" />
+        <option value="$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py" />
       </list>
     </option>
   </component>
@@ -331,22 +332,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py">
+    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/data_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="260" column="8" lean-forward="true" selection-start-line="260" selection-start-column="8" selection-end-line="260" selection-end-column="8" />
+        <state relative-caret-position="438">
+          <caret line="209" column="13" lean-forward="true" selection-start-line="209" selection-start-column="13" selection-end-line="209" selection-end-column="13" />
           <folding>
-            <element signature="e#275#313#0" expanded="true" />
+            <element signature="e#352#390#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/data_generator.py">
+    <entry file="file://$PROJECT_DIR$/code/contrastive_vae/contrastive_vae_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="219" column="0" lean-forward="true" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+        <state relative-caret-position="140">
+          <caret line="138" column="32" lean-forward="true" selection-start-line="138" selection-start-column="32" selection-end-line="138" selection-end-column="32" />
           <folding>
-            <element signature="e#352#390#0" expanded="true" />
+            <element signature="e#275#313#0" expanded="true" />
           </folding>
         </state>
       </provider>
