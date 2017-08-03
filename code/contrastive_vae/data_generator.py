@@ -42,7 +42,7 @@ class DataGenerator(object):
                contrastive_data_path,
                max_nb_words=50000,
                max_nb_examples=None,
-               max_sequence_length=200,
+               max_sequence_length=50,
                validation_split=0.1):
       self.positive_data_path = positive_data_path
       self.contrastive_data_path = contrastive_data_path
@@ -195,6 +195,8 @@ class DataGenerator(object):
     logger.info("Shape of training scores: {}".format(s_train.shape))
     logger.info("Shape of training features: {}".format(x_val.shape))
     logger.info("Shape of training scores: {}".format(s_val.shape))
+    logger.info(x_train.mean())
+    logger.info(np.isnan(x_train).sum())
 
     return x_train, s_train, x_val, s_val, tokenizer, texts, scores
 

@@ -54,7 +54,7 @@ def train(generated_data_path=None, epochs=1, examples_cap=None):
       batch_size=32,
       max_nb_words=100000,
       max_nb_examples=None,
-      max_sequence_length=200,
+      max_sequence_length=50,
       encoder_lstm_dims = [256, 128],
       decoder_lstm_dims = [128, 256],
       latent_dim=64,
