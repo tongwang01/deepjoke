@@ -101,4 +101,4 @@ if __name__ == "__main__":
       generated_data_path="data_generated.p",
       #generated_data_path=None,
       epochs=1,
-      examples_cap=None)
+      examples_cap=100000)

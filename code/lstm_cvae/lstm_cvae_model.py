@@ -258,7 +258,8 @@ class CondDecodeLstmCvae(object):
         # Sample z ~ Q(z|X,y)
         def sampling(args):
             z_mean, z_log_sigma = args
-            epsilon = K.random_normal(shape=(self.config.batch_size, self.config.latent_size), 
+            epsilon = K.random_normal(shape=(self.config.batch_size,
+                                             self.config.latent_size),
                                        mean=0., stddev=1.)            
             return z_mean + K.exp(z_log_sigma/2.) * epsilon
         

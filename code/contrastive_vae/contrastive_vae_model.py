@@ -17,6 +17,7 @@ import numpy as np
 import os
 
 from keras import backend as K
+from keras import callbacks
 from keras import optimizers
 from keras.layers import Dense, LSTM, Embedding, Input, RepeatVector, Lambda, TimeDistributed
 from keras.models import Model
@@ -249,13 +250,17 @@ class ContraVAE(object):
     s_val = s_val[0:val_cap]
     x_val_3d = x_val.reshape(x_val.shape[0], x_val.shape[1], 1)
 
+    # Tensorboard
+    tensorboard = callbacks.TensorBoard(log_dir=(self.config.model_dir +
+                                                 "/logs"))
     # Train the vae model
     hist = self.vae.fit(
         x=[x_train, s_train, s_train],
         y=x_train_3d,
         batch_size=self.config.batch_size,
         epochs=epochs,
-        validation_data=([x_val, s_val, s_val], x_val_3d))
+        validation_data=([x_val, s_val, s_val], x_val_3d),
+        callbacks=[tensorboard])
 
     # Save outputs
     try:
